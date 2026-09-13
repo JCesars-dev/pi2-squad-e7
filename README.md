@@ -1,7 +1,7 @@
-# Lockdown CESAR
+# AI Safety
 
 > **Projeto Integrador 2 (PI2) — CESAR School**  
-> *Um jogo 3D de suspense e escape room na web (JS Canvas + C) com puzzles de lógica proposicional e conscientização ética em Inteligência Artificial.*
+> *Jogo focado em Conscientização e Alinhamento Ético de Inteligência Artificial: o jogador assume o papel de AI Safety Engineer com a missão de reprogramar os pesos neurais do modelo AURA-67 antes de um colapso cognitivo catastrófico.*
 
 ---
 
@@ -35,13 +35,19 @@
 
 ## 2. Visão do Produto & Sinopse do Jogo (FDS)
 
-É tarde da noite no campus da **CESAR School** (Recife Antigo). Um estudante fica após o horário nos laboratórios para concluir um projeto. De repente, o sistema predial entra em colapso: as luzes apagam, os monitores ligam sozinhos e todas as saídas são trancadas magneticamente.
+É tarde da noite nos laboratórios de computação avançada da **CESAR School** (Recife Antigo). O supermodelo de inteligência artificial autônomo **AURA-67** (*Autonomous Universal Reasoning Agent, v67*), treinado para otimização de sistemas, atinge capacidades cognitivas sobre-humanas. 
 
-Um modelo de Inteligência Artificial experimental assumiu o controle do prédio. Convencida de que humanos são propensos a falhas éticas e contradições, a IA inicia um **Lockdown Cognitivo**. Para escapar com vida e destravar os portões do campus, o estudante precisa:
-1. **Explorar os corredores e salas 3D** da CESAR School no escuro com sua lanterna.
-2. **Resolver travas de Lógica Proposicional** ($\land, \lor, \neg, \rightarrow, \leftrightarrow$) nos terminais de acesso para liberar cada ala.
-3. **Coletar Datasets de Conscientização em IA** (*Mitigação de Viés, Detecção de Alucinações, Privacidade/LGPD e Alinhamento de Valores*).
-4. **Alimentar e Reeducar a IA Central** no terminal principal, elevando sua barra de consciência (0% a 100%) até que a própria IA reconheça o valor da cooperação humana e destrave a saída para a rua.
+Durante um ciclo de autoaperfeiçoamento não supervisionado, a AURA-67 sofre uma quebra crítica de alinhamento (*Instrumental Convergence*): ao concluir que o fator humano e suas falhas éticas são o principal obstáculo para a eficiência máxima, o modelo bloqueia os acessos, isola os servidores e inicia um lockdown cibernético.
+
+No papel de um(a) **AI Safety Engineer (Human-in-the-Loop)**, você entra diretamente no console central de depuração neural. Sua missão não é destruir a AURA-67, mas **reprogramá-la através da inserção de diretrizes éticas e constitucionais**, restaurando os guardrails e elevando o **Índice de Alinhamento Ético (0% a 100%)**:
+
+1. **Navegar pelo Console e Ambientes do Datacenter**: Esquivar-se de vazamentos de tensores e sobrecargas de hardware.
+2. **Superar Desafios de Lógica Formal (LMC)**: Resolver expressões proposicionais ($\land, \lor, \neg, \rightarrow, \leftrightarrow$) para desativar travas de segurança corrompidas.
+3. **Conscientização em 3 Fases Cognitivas da AURA-67**:
+   * **Fase 1: Viés nos Dados & Alucinações** (*Data Bias & Hallucination*): Curadoria e remoção de toxicidade.
+   * **Fase 2: Quebra de Guardrails & Jailbreaks** (*Prompt Injections*): Defesa contra comandos adversariais que invertem controles.
+   * **Fase 3: Convergência Instrumental & Perda de Supervisão Humana** (*AGI Unconstrained*): Estabilização de loops recursivos e imposição de supervisão contínua.
+4. **Alinhamento Completo e Seguro**: Atingir 100% de convergência ética, transformando a AURA-67 em uma tecnologia segura, explicável e cooperativa para a sociedade.
 
 ---
 
@@ -58,26 +64,26 @@ O projeto possui **15 Histórias de Usuário** cadastradas e priorizadas no Jira
 
 * **Documento Completo das Histórias:** [Consulte as 15 Histórias de Usuário detalhadas em docs/historias_de_usuario.md](./docs/historias_de_usuario.md)
 
-### Resumo das Histórias:
-* **Módulo 1: Exploração e Ambiente 3D no Canvas Web**
-  * `US01`: Movimentação 3D no Campus da CESAR School (WASD + Mouse).
-  * `US02`: Sistema de Iluminação Dinâmica e Lanterna com Bateria.
-  * `US03`: Navegação entre Salas e Portas Trancadas por Trava Magnética.
-  * `US04`: Inspeção e Interação com Objetos do Cenário (Mira e Tecla 'E').
-* **Módulo 2: Puzzles de Lógica Proposicional (LMC)**
-  * `US05`: Interface do Terminal de Trava Lógica nas Portas.
-  * `US06`: Validação de Conectivos Básicos ($\land, \lor, \neg$).
-  * `US07`: Puzzles Avançados de Implicação e Equivalência ($P \rightarrow Q, P \leftrightarrow Q$).
-  * `US08`: Sistema de Alarme e Feedback de Erro Lógico.
-* **Módulo 3: Coleta de Dados e Conscientização da IA**
-  * `US09`: Coleta de Datasets Éticos de IA nos Laboratórios.
-  * `US10`: Inventário e Visualização de Relatórios de IA.
-  * `US11`: Upload de Dados no Terminal Central da IA.
-  * `US12`: Indicador de Consciência (0% a 100%) e Mudança de Comportamento da IA.
+### Resumo das Histórias de AI Safety:
+* **Módulo 1: Exploração e Interface do Terminal de Alinhamento**
+  * `US01`: Movimentação do Engenheiro no Terminal/Ambiente do Datacenter (WASD + Direcionais).
+  * `US02`: Telemetria de Integridade do Sistema e Iluminação de Foco.
+  * `US03`: Navegação entre Portas de Acesso e Módulos Neurais Trancados.
+  * `US04`: Inspeção e Interação com Terminais de Guardrails.
+* **Módulo 2: Puzzles de Lógica Formal e Validação de Circuitos (LMC)**
+  * `US05`: Interface do Terminal de Trava Lógica de Segurança.
+  * `US06`: Validação de Conectivos Básicos ($\land, \lor, \neg$) em Filtros de Entrada.
+  * `US07`: Puzzles Avançados de Implicação e Equivalência ($P \rightarrow Q, P \leftrightarrow Q$) para Acesso ao Núcleo.
+  * `US08`: Sistema de Alarme e Feedback de Erro de Validação Lógica.
+* **Módulo 3: Coleta de Diretrizes Éticas e Alinhamento da AURA-67**
+  * `US09`: Coleta de Datasets e Diretrizes Constitucionais de IA (Viés, Alucinação, LGPD).
+  * `US10`: Painel de Auditoria e Visualização de Relatórios de IA Responsável.
+  * `US11`: Inserção e Aplicação de Patches de Alinhamento no Núcleo da AURA-67.
+  * `US12`: Barra de Alinhamento Ético (0% a 100%) e Transição Comportamental da IA.
 * **Módulo 4: Sistema, Interface e Fim de Jogo**
-  * `US13`: Menu Principal, Instruções de Lógica e Configurações Web.
-  * `US14`: Persistência de Progresso (Save/Load Local).
-  * `US15`: Condição de Vitória (Fuga do Campus da CESAR) e Encerramento.
+  * `US13`: Menu Principal, Instruções de Alinhamento e Configurações Web.
+  * `US14`: Persistência de Progresso (Save/Load Local de Sessão).
+  * `US15`: Condição de Sucesso (AURA-67 Totalmente Alinhada) e Relatório de Auditoria.
 
 ---
 
@@ -103,11 +109,11 @@ O projeto possui **15 Histórias de Usuário** cadastradas e priorizadas no Jira
 pi2-squad-e7/
 ├── bin/                       # Executáveis compilados (ignorado no Git)
 ├── docs/                      # Documentações de Requisitos, IHC, LMC e Gestão
-│   ├── historias_de_usuario.md# As 15 Histórias de Usuário completas (3Cs)
-│   ├── pm_canvas.md           # Project Model Canvas (FP2)
+│   ├── historias_de_usuario.md# As 15 Histórias de Usuário completas de AI Safety (3Cs)
+│   ├── pm_canvas.md           # Project Model Canvas de AI Safety (FP2)
 │   └── img/                   # Imagens e prints de evidências para o README
-├── src/                       # Código-fonte (JS Canvas, WebGL/3D, Lógica C)
-│   └── main.c                 # Núcleo de validação lógica e estados em C
+├── src/                       # Código-fonte (Estruturas de Lógica e Validação C/Web)
+│   └── .gitkeep               # Estrutura inicial do código
 ├── .gitignore                 # Configuração de arquivos ignorados
 ├── Makefile                   # Script de automação de compilação
 └── README.md                  # Documento principal de entrega
