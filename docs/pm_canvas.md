@@ -24,30 +24,29 @@ O **Project Model Canvas (PM Canvas)** sintetiza a estratégia, escopo, requisit
 ### 1. Por Que? (Justificativa, Objetivos e Benefícios)
 
 #### 1.1. Justificativas
-* Dificuldade recorrente dos estudantes em assimilar conceitos abstratos de **Lógica Proposicional** e formalismo matemático sem aplicação prática imediata.
-* Urgência acadêmica e de mercado em debater **Segurança, Ética e Alinhamento em Inteligência Artificial** (mitigação de vieses, alucinações, vazamento de privacidade/LGPD e riscos de convergência instrumental).
-* Necessidade de ferramentas didáticas interativas que combinem desafios lógicos com conscientização ética sobre o papel do humano na supervisão de modelos de IA (*Human-in-the-Loop*).
+* Urgência acadêmica e mercadológica em debater **Segurança, Ética e Alinhamento em Inteligência Artificial** (mitigação de vieses, alucinações, vazamento de privacidade/LGPD e riscos de convergência instrumental).
+* Dificuldade de estudantes em compreender na prática como funcionam mecanismos de **Alinhamento Constitucional e Guardrails de IA** (*Human-in-the-Loop*).
+* Necessidade de ferramentas didáticas interativas que combinem dinâmicas de ação e digitação com conscientização crítica sobre o papel humano na supervisão de modelos de IA.
 
 #### 1.2. Objetivo SMART
-* Desenvolver e disponibilizar na web a aplicação interativa de **AI Safety** integrada a C (U1) e Haskell (U2) até o encerramento do semestre letivo (W17), contendo **15 Histórias de Usuário validadas**, no mínimo **4 puzzles lógicos formais** e módulos de alinhamento com a IA **AURA-67**, alcançando avaliação de usabilidade $\ge 80\%$ de satisfação.
+* Desenvolver e disponibilizar na web a aplicação interativa de **AI Safety** até o encerramento do semestre letivo (W17), contendo **15 Histórias de Usuário validadas**, módulos de inserção de diretrizes éticas em tempo real e desafios de alinhamento com o modelo **AURA-67**, alcançando avaliação de usabilidade $\ge 80\%$ de satisfação.
 
 #### 1.3. Benefícios
-* Fixação prática dos conectivos lógicos ($\land, \lor, \neg, \rightarrow, \leftrightarrow$) e tabelas-verdade através da validação de travas de segurança dos servidores.
-* Conscientização crítica sobre os dilemas contemporâneos da IA através do sistema de inserção de diretrizes éticas e reprogramação do modelo AURA-67.
-* Validação e convergência multidisciplinar das 5 matérias do semestre (PIF, IHC, LMC, FDS, FP2).
+* Conscientização crítica sobre os dilemas contemporâneos da IA através da reprogramação ativa e mitigação de vulnerabilidades (vieses, jailbreaks e injeções adversariais).
+* Fixação prática de princípios de governança, auditoria de modelos e supervisão humana (*Constitutional AI*).
+* Validação e convergência multidisciplinar das matérias do semestre (PIF, IHC, LMC, FDS, FP2).
 
 ---
 
 ### 2. O Que? (Produto, Requisitos e Não-Escopo)
 
 #### 2.1. Produto
-* **AI Safety:** Aplicação web interativa em primeira pessoa / terminal neural com motor lógico em C, ambientada nos laboratórios e datacenter da CESAR School, onde o jogador atua como AI Safety Engineer para reprogramar o modelo AURA-67.
+* **AI Safety:** Aplicação web interativa em terminal neural com motor em C/Web, ambientada nos laboratórios e datacenter da CESAR School, onde o jogador atua como AI Safety Engineer para reprogramar o modelo AURA-67.
 
 #### 2.2. Requisitos de Alto Nível
 * **Requisitos Funcionais (RF):**
   * Movimentação do engenheiro no terminal e ambiente do datacenter (WASD / direcionais).
-  * Painéis de acesso protegidos por travas de lógica proposicional para restaurar guardrails.
-  * Inserção de diretrizes de alinhamento ético e constitucional no núcleo da AURA-67.
+  * Inserção e validação de diretrizes de alinhamento ético e constitucional em tempo real.
   * Barra de Alinhamento Ético (0% a 100%) que altera o comportamento e mensagens do modelo.
   * Mecânicas de defesa contra ataques adversariais (Prompt Injections e Context Drift).
   * Persistência de estado local (Save/Load) e condições de convergência ou falha.

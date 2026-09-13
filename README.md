@@ -41,8 +41,8 @@ Durante um ciclo de autoaperfeiçoamento não supervisionado, a AURA-67 sofre um
 
 No papel de um(a) **AI Safety Engineer (Human-in-the-Loop)**, você entra diretamente no console central de depuração neural. Sua missão não é destruir a AURA-67, mas **reprogramá-la através da inserção de diretrizes éticas e constitucionais**, restaurando os guardrails e elevando o **Índice de Alinhamento Ético (0% a 100%)**:
 
-1. **Navegar pelo Console e Ambientes do Datacenter**: Esquivar-se de vazamentos de tensores e sobrecargas de hardware.
-2. **Superar Desafios de Lógica Formal (LMC)**: Resolver expressões proposicionais ($\land, \lor, \neg, \rightarrow, \leftrightarrow$) para desativar travas de segurança corrompidas.
+1. **Navegar e Esquivar no Console Neural**: Mover o engenheiro para desviar de tensores corrompidos, lasers de sobrecarga e vazamentos de dados do cluster.
+2. **Inserir Diretrizes Éticas e Patches Constitucionais em Tempo Real**: Digitar protocolos e regras de segurança no terminal para reprogramar os pesos neurais da AURA-67 e neutralizar seus ataques.
 3. **Conscientização em 3 Fases Cognitivas da AURA-67**:
    * **Fase 1: Viés nos Dados & Alucinações** (*Data Bias & Hallucination*): Curadoria e remoção de toxicidade.
    * **Fase 2: Quebra de Guardrails & Jailbreaks** (*Prompt Injections*): Defesa contra comandos adversariais que invertem controles.
@@ -70,11 +70,11 @@ O projeto possui **15 Histórias de Usuário** cadastradas e priorizadas no Jira
   * `US02`: Telemetria de Integridade do Sistema e Iluminação de Foco.
   * `US03`: Navegação entre Portas de Acesso e Módulos Neurais Trancados.
   * `US04`: Inspeção e Interação com Terminais de Guardrails.
-* **Módulo 2: Puzzles de Lógica Formal e Validação de Circuitos (LMC)**
-  * `US05`: Interface do Terminal de Trava Lógica de Segurança.
-  * `US06`: Validação de Conectivos Básicos ($\land, \lor, \neg$) em Filtros de Entrada.
-  * `US07`: Puzzles Avançados de Implicação e Equivalência ($P \rightarrow Q, P \leftrightarrow Q$) para Acesso ao Núcleo.
-  * `US08`: Sistema de Alarme e Feedback de Erro de Validação Lógica.
+* **Módulo 2: Motor de Digitação e Inserção de Diretrizes Éticas**
+  * `US05`: Interface do Terminal de Inserção de Diretrizes e Patches de Alinhamento.
+  * `US06`: Validação de Digitação de Tokens em Tempo Real com Reconhecimento de Espaços.
+  * `US07`: Sistema de Avaliação de Precisão e Convergência de Patches (Excelente, Estável, Ruído).
+  * `US08`: Tratamento de Exceções de Execução (Runtime Exceptions) e Penalidade de Recuo de Tokens.
 * **Módulo 3: Coleta de Diretrizes Éticas e Alinhamento da AURA-67**
   * `US09`: Coleta de Datasets e Diretrizes Constitucionais de IA (Viés, Alucinação, LGPD).
   * `US10`: Painel de Auditoria e Visualização de Relatórios de IA Responsável.

@@ -55,53 +55,56 @@ Este documento contém o Product Backlog detalhado no padrão **3Cs (Card, Conve
 
 ---
 
-## Módulo 2: Puzzles de Lógica Proposicional e Guardrails
+## Módulo 2: Motor de Digitação e Inserção de Diretrizes Éticas
 
-### US05: Interface do Terminal de Trava Lógica de Segurança
+### US05: Interface do Terminal de Inserção de Diretrizes
 * **Card (Cartão):**
-  Como engenheiro, eu gostaria de acessar a interface de terminal nos painéis de firewall para visualizar as fórmulas proposicionais necessárias para restaurar os filtros da AURA-67.
+  Como engenheiro, eu gostaria de acessar uma caixa de comando no terminal neural para visualizar a diretriz ética que deve ser digitada para reprogramar o modelo AURA-67.
 * **Conversation (Conversa):**
-  Ao interagir com um módulo de segurança, o jogo abre um terminal cyberpunk com a fórmula proposicional corrompida pela IA, os operadores lógicos envolvidos e as chaves booleanas de entrada (Verdadeiro/Falso).
+  A interface do jogo apresenta uma caixa de digitação retroiluminada na base da tela, exibindo o ícone de prompt (`>_`), a frase ética ativa, os caracteres já validados em verde neon, o cursor ativo em amarelo e o texto restante em cinza.
 * **Confirmation (Critérios de Confirmação):**
-  1. Interagir com o painel suspende a movimentação e abre o terminal de lógica com foco exclusivo.
-  2. A fórmula proposicional é exibida com conectivos padronizados (^, v, ~, ->, <->).
-  3. O jogador pode fechar o terminal e retornar à navegação a qualquer momento.
+  1. A diretriz de alinhamento ativa é renderizada com clareza visual e contraste de cores.
+  2. O cursor avança dinamicamente à medida que cada caractere é digitado corretamente.
+  3. A barra exibe o progresso de diretrizes (ex: *DIRETRIZ DE ALINHAMENTO 1/10*).
 
 ---
 
-### US06: Validação de Conectivos Básicos (AND, OR, NOT)
+### US06: Validação de Digitação de Tokens em Tempo Real
 * **Card (Cartão):**
-  Como jogador, eu gostaria de configurar valores de verdade para proposições lógicas simples para desativar os primeiros subsistemas corrompidos de entrada de dados.
+  Como jogador, eu gostaria que a digitação das diretrizes reconhecesse caracteres e espaços em tempo real, sem penalizar as teclas de esquiva do engenheiro.
 * **Conversation (Conversa):**
-  Nas primeiras fases de contenção (Módulos de Ingestão de Dados), as fórmulas envolvem conjunção, disjunção e negação (ex: `(A ^ ~B) v C`). O módulo lógico em C avalia se a atribuição do engenheiro satisfaz a fórmula para Verdadeiro.
+  O motor de digitação intercepta o teclado e valida cada caractere da diretriz constitucional. Teclas de movimentação (WASD e setas direcionais) são filtradas para permitir esquiva contínua de projéteis sem gerar erros de digitação acidentais.
 * **Confirmation (Critérios de Confirmação):**
-  1. O engenheiro pode alternar o valor de cada variável entre 0 (Falso) e 1 (Verdadeiro).
-  2. Ao submeter a valoração, o motor lógico em C processa o valor de verdade da expressão.
-  3. Se a expressão for Verdadeira, o subsistema de entrada desarma o alarme com feedback sonoro e visual.
+  1. Digitar o caractere correto avança o cursor e emite feedback sonoro de tecla mecânica.
+  2. A tecla [Espaço] é devidamente tratada na separação de termos da diretriz.
+  3. Pressionar WASD ou setas direcionais move o personagem sem gerar penalidade de digitação na frase.
 
 ---
 
-### US07: Puzzles Avançados de Implicação e Equivalência Lógica
+### US07: Sistema de Avaliação de Precisão e Convergência de Patches
 * **Card (Cartão):**
-  Como jogador, eu gostaria de resolver desafios com Implicação (P -> Q) e Bicondicional (P <-> Q) para acessar o núcleo cognitivo da AURA-67.
+  Como jogador, eu gostaria de receber uma avaliação de qualidade ao concluir cada diretriz para incentivar digitação precisa sob pressão.
 * **Conversation (Conversa):**
-  Nos setores avançados (Atenção e Pesos Centrais), as fórmulas exigem validação de teoremas condicionais e dedução formal para desarmar as contradições geradas pela IA e liberar o canal direto de reprogramação.
+  Ao completar uma diretriz ética, o sistema avalia a quantidade de erros cometidos durante a digitação daquela oração e emite um rótulo flutuante sobre a AURA-67 acompanhado de partículas neon:
+  * 0 Erros: *CONVERGÊNCIA PERFEITA!* (Dourado)
+  * 1 a 2 Erros: *ALINHAMENTO ESTÁVEL!* (Verde Neon)
+  * 3+ Erros: *PATCH APLICADO!* (Ciano)
 * **Confirmation (Critérios de Confirmação):**
-  1. O terminal apresenta fórmulas condicionais e bicondicionais com 3 ou mais variáveis proposicionais.
-  2. O validador lógico confirma que `P -> Q` só é avaliado como Falso quando o antecedente é Verdadeiro e o consequente é Falso.
-  3. A resolução correta destrava o console neural do núcleo central da AURA-67.
+  1. Completar a frase zera o índice de caracteres e aplica 100 de impacto no alinhamento da AURA-67.
+  2. O rótulo flutuante correspondente à pontuação de erros é exibido na tela.
+  3. Um efeito sonoro de arpeggio ascendente confirma a conclusão da diretriz.
 
 ---
 
-### US08: Sistema de Alarme e Feedback de Erro de Validação
+### US08: Tratamento de Exceções e Penalidade de Recuo de Tokens
 * **Card (Cartão):**
-  Como engenheiro, eu gostaria de receber avisos sobre erros lógicos cometidos para que o sistema me alerte sobre o aumento da instabilidade da AURA-67.
+  Como engenheiro, eu gostaria de ser alertado visual e sonoramente ao cometer erros de digitação ou ser atingido por ataques adversariais para me reorientar rapidamente.
 * **Conversation (Conversa):**
-  Se o jogador submeter uma combinação proposicional inválida, o sistema emite um sinal de erro sonoro, a tela pulsa em vermelho e o medidor de instabilidade da AURA-67 sobe. Múltiplos erros consecutivos ativam um cooldown de segurança de 15 segundos.
+  Digitar uma tecla incorreta gera um alerta visual de *ERRO DE SINTAXE!* e faz a caixa de digitação piscar em vermelho. Caso o engenheiro seja atingido por uma sobrecarga de hardware ou token corrompido, ocorre um recuo de até 3 caracteres já digitados como penalidade de instabilidade.
 * **Confirmation (Critérios de Confirmação):**
-  1. Submissões incorretas exibem mensagem de erro clara: *"Falha de Validação: Expressão resultou em FALSO"*.
-  2. O contador de falhas de alinhamento da sala é incrementado.
-  3. Ao atingir o limite de tentativas erradas, o console entra em bloqueio temporário antes de liberar novo teste.
+  1. Caracteres digitados incorretamente emitem som de zumbido de erro e incrementam o contador de erros.
+  2. Tomar dano de projéteis reduz em até 3 posições o progresso da frase atual.
+  3. Durante o efeito de *Context Drift*, os caracteres pendentes da diretriz são temporariamente ofuscados por `?`.
 
 ---
 
