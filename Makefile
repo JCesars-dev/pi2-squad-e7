@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -pedantic
 TARGET = bin/jogo
-SRCS = src/main.c
+SRCS = $(wildcard src/*.c)
 
 all: $(TARGET)
 
