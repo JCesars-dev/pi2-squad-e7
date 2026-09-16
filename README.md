@@ -112,21 +112,42 @@ pi2-squad-e7/
 │   ├── historias_de_usuario.md# As 15 Histórias de Usuário completas de AI Safety (3Cs)
 │   ├── pm_canvas.md           # Project Model Canvas de AI Safety (FP2)
 │   └── img/                   # Imagens e prints de evidências para o README
-├── src/                       # Código-fonte (Estruturas de Lógica e Validação C/Web)
-│   └── .gitkeep               # Estrutura inicial do código
+├── include/                   # Cabeçalhos de bibliotecas gráficas (Raylib C99)
+│   ├── raylib.h
+│   ├── raymath.h
+│   └── rlgl.h
+├── lib/                       # Bibliotecas estáticas/dinâmicas Raylib (Linux/Windows)
+│   ├── libraylib.a
+│   ├── libraylib.so
+│   └── raylib.dll
+├── src/                       # Código-fonte do Motor Gráfico 2D em C99
+│   ├── config.h               # Dimensões (900x700), física e paleta de cores
+│   ├── player.h / player.c    # Jogador (Engenheiro de AI Safety), movimentação e iframes
+│   ├── boss.h / boss.c        # Modelo AURA-67, 3 fases cognitivas e padrões de ataque
+│   ├── bullet.h / bullet.c    # Projéteis (normal, homing, status), lasers e vórtice
+│   ├── typing_engine.h / .c   # Motor de digitação das 10 diretrizes e avaliação de precisão
+│   ├── ui.h / ui.c            # HUD retrô (>_), barra do chefe, partículas e screen shake
+│   └── main.c                 # Game loop a 60 FPS com máquina de estados
 ├── .gitignore                 # Configuração de arquivos ignorados
-├── Makefile                   # Script de automação de compilação
+├── Makefile                   # Automação de compilação C99 multiplataforma
 └── README.md                  # Documento principal de entrega
 ```
 
 ---
 
-## 7. Como Executar o Projeto
+## 7. Como Compilar e Executar o Jogo Gráfico
+
+O jogo possui interface gráfica 2D completa em tempo real desenvolvida em **C99** utilizando a biblioteca **Raylib**.
+
+### Compilação e Execução via Makefile:
 
 ```bash
-# Compilar o módulo em C
+# Compilar o jogo em C (gera bin/jogo com zero warnings)
 make
 
-# Executar a aplicação
+# Executar o jogo na janela gráfica (900x700 a 60 FPS)
 make run
+
+# Limpar arquivos binários compilados
+make clean
 ```
