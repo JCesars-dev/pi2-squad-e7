@@ -43,21 +43,18 @@ int main(void) {
             if (IsKeyPressed(KEY_ONE) || IsKeyPressed(KEY_N)) difficulty = DIFFICULTY_NORMAL;
             if (IsKeyPressed(KEY_TWO) || IsKeyPressed(KEY_D)) difficulty = DIFFICULTY_HARD;
 
-            /* =========================================================================
-             * TODO [PI2-91 - Matheus Chaves]:
-             * "Fazer a chamada do início de jogo no menu interativo principal"
-             * 
-             * Implemente aqui a verificacao da tecla de inicio (ex: KEY_SPACE ou KEY_ENTER).
-             * Ao pressionar:
-             * 1. Inicialize as entidades:
-             *    player_init(&player, SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT - 200.0f);
-             *    boss_init(&boss, SCREEN_WIDTH / 2.0f, 130.0f, difficulty);
-             *    bullet_mgr_clear(&bullet_mgr);
-             *    typing_engine_reset(&typing_engine);
-             *    ui_init(&ui);
-             * 2. Mude o estado para combate:
-             *    state = STATE_COMBAT;
-             * ========================================================================= */
+        /* Início de jogo no menu interativo principal */
+            if (IsKeyPressed(KEY_SPACE) || IsKeyPressed(KEY_ENTER)) {
+                /* 1. Inicializa as entidades para resetar o estado inicial da partida */
+                player_init(&player, SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT - 200.0f);
+                boss_init(&boss, SCREEN_WIDTH / 2.0f, 130.0f, difficulty);
+                bullet_mgr_clear(&bullet_mgr);
+                typing_engine_reset(&typing_engine);
+                ui_init(&ui);
+                
+                /* 2. Muda o estado para combate */
+                state = STATE_COMBAT;
+            }
         } else if (state == STATE_COMBAT) {
             /* 1. Movimentacao do Jogador */
             player_handle_input(&player);
