@@ -23,6 +23,7 @@ typedef struct {
     float timer_laser;
     float timer_vortex;
     float spiral_angle;
+    int alignment_pct;
 } Boss;
 
 void boss_init(Boss *b, float x, float y, int difficulty);

@@ -59,4 +59,12 @@
 #define DURATION_BLIND 3.5f
 #define DURATION_CONFUSE 4.0f
 
+/* Regras de Pontuacao e Alinhamento Etico (Caio Brayner - PI2-90) */
+#define SCORE_PERFECT          150
+#define SCORE_STABLE           100
+#define SCORE_PATCHED          50
+#define BOSS_DAMAGE_PER_PHRASE 100
+#define BOSS_ALIGNMENT_STEP    10
+#define TOTAL_DIRECTIVES       10
+
 #endif /* CONFIG_H */

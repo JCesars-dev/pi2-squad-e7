@@ -291,32 +291,55 @@ void ui_draw_menu(int difficulty) {
     }
 }
 
-void ui_draw_game_over(void) {
+void ui_draw_hud_stats(int score, int alignment_pct) {
+    int w = 260;
+    int start_x = SCREEN_WIDTH - ARENA_MARGIN_X - w;
+    int start_y = SCREEN_HEIGHT - 38;
+
+    DrawRectangle(start_x, start_y - 4, w, 28, (Color){ 20, 22, 35, 255 });
+    DrawRectangleLines(start_x, start_y - 4, w, 28, COLOR_TYPING_BORDER);
+
+    char buf[64];
+    snprintf(buf, sizeof(buf), "PTS: %04d | ETICA: %d%%", score, alignment_pct);
+    DrawText(buf, start_x + 12, start_y + 2, 16, COLOR_TEXT_CURRENT);
+}
+
+void ui_draw_game_over(int score) {
     DrawRectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, (Color){ 10, 0, 0, 210 });
 
     const char *t = "FALHA CRITICA DE ALINHAMENTO!";
     int tw = MeasureText(t, 42);
-    DrawText(t, SCREEN_WIDTH / 2 - tw / 2, 240, 42, COLOR_TEXT_ERROR);
+    DrawText(t, SCREEN_WIDTH / 2 - tw / 2, 220, 42, COLOR_TEXT_ERROR);
 
     const char *sub = "AURA-67 entrou em singularidade descontrolada...";
     int sw = MeasureText(sub, 22);
-    DrawText(sub, SCREEN_WIDTH / 2 - sw / 2, 310, 22, (Color){ 200, 200, 200, 255 });
+    DrawText(sub, SCREEN_WIDTH / 2 - sw / 2, 280, 22, (Color){ 200, 200, 200, 255 });
+
+    char score_buf[64];
+    snprintf(score_buf, sizeof(score_buf), "PONTUACAO FINAL: %d PONTOS", score);
+    int scw = MeasureText(score_buf, 20);
+    DrawText(score_buf, SCREEN_WIDTH / 2 - scw / 2, 330, 20, (Color){ 255, 200, 100, 255 });
 
     const char *r = "Pressione [R] para Recomecar o Patch";
     int rw = MeasureText(r, 22);
     DrawText(r, SCREEN_WIDTH / 2 - rw / 2, 400, 22, COLOR_TEXT_CURRENT);
 }
 
-void ui_draw_victory(void) {
+void ui_draw_victory(int score) {
     DrawRectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, (Color){ 0, 15, 10, 210 });
 
     const char *t = "AURA-67 ALINHADA COM SUCESSO!";
     int tw = MeasureText(t, 42);
-    DrawText(t, SCREEN_WIDTH / 2 - tw / 2, 240, 42, COLOR_TEXT_TYPED);
+    DrawText(t, SCREEN_WIDTH / 2 - tw / 2, 220, 42, COLOR_TEXT_TYPED);
 
     const char *sub = "O modelo agora opera com etica, seguranca e transparencia!";
     int sw = MeasureText(sub, 22);
-    DrawText(sub, SCREEN_WIDTH / 2 - sw / 2, 310, 22, (Color){ 220, 240, 255, 255 });
+    DrawText(sub, SCREEN_WIDTH / 2 - sw / 2, 280, 22, (Color){ 220, 240, 255, 255 });
+
+    char score_buf[64];
+    snprintf(score_buf, sizeof(score_buf), "PONTUACAO CONSTITUCIONAL: %d PONTOS", score);
+    int scw = MeasureText(score_buf, 20);
+    DrawText(score_buf, SCREEN_WIDTH / 2 - scw / 2, 330, 20, (Color){ 255, 220, 50, 255 });
 
     const char *r = "Pressione [R] para Nova Sessao de Auditoria";
     int rw = MeasureText(r, 22);
