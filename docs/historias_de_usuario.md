@@ -21,13 +21,13 @@ Este documento contém o Product Backlog detalhado no padrão **3Cs (Card, Conve
 
 ### US02: Telemetria de Integridade e Iluminação de Foco
 * **Card (Cartão):**
-  Como engenheiro, eu gostaria de monitorar a integridade do meu console e alternar modos de telemetria para enxergar anomalias nos servidores da AURA-67.
+  Como operador de AI Safety, eu gostaria de monitorar a telemetria de integridade do meu console e o foco de análise de diretrizes, para identificar anomalias cognitivas e ataques de alta voltagem da AURA-67 em tempo real.
 * **Conversation (Conversa):**
-  O ambiente do datacenter possui setores com iluminação comprometida pela sobrecarga da AURA-67. O jogador conta com um feixe de foco e telemetria que exibe o consumo de energia e alertas de sobrecarga de hardware.
+  Durante o confronto com a AURA-67, a interface neural do operador provê telemetria constante: nível de integridade estrutural (vidas), barra de alinhamento da IA e foco dinâmico no cursor da caixa de comando. Quando a IA entra em sobrecarga ou executa ataques adversariais (Prompt Injections, Context Drift ou Lasers), o sistema projeta alertas visuais imediatos na tela para orientar a esquiva e contenção.
 * **Confirmation (Critérios de Confirmação):**
-  1. O jogador pode acionar o foco de análise de integridade através do teclado.
-  2. Quando ativo, o feixe projeta iluminação direta destacando terminais corrompidos.
-  3. Indicadores de alerta notificam quando há vazamento de dados de alta voltagem na proximidade.
+  1. O HUD exibe a telemetria de integridade do operador e da AURA-67 de forma contínua e visível.
+  2. A caixa de comando destaca com iluminação de foco em alto contraste o caractere/token ativo em digitação.
+  3. Indicadores e banners de alerta notificam em tempo real quando há anomalias adversariais ou ataques de sobrecarga na arena.
 
 ---
 
