@@ -103,15 +103,91 @@ O projeto possui **15 Histórias de Usuário** cadastradas e priorizadas no Jira
 
 ---
 
-## 6. Estrutura do Repositório
+## 6. Entrega 02 (FDS) — Modelagem, Prototipação, Rastreabilidade e Demonstração
+
+Esta seção consolida os artefatos oficiais da **Entrega 02 de Engenharia de Software (FDS)**, cobrindo os quatro pilares avaliativos (Modelagem, Prototipação, Rastreabilidade e Demonstração):
+
+* **Documento Técnico Completo:** [Consulte o documento detalhado em docs/entrega_02_modelagem_prototipacao.md](./docs/entrega_02_modelagem_prototipacao.md)
+
+### 6.1. Modelagem (Diagramas de Atividades UML para 10 User Stories)
+
+Foram modelados formalmente os fluxos comportamentais de **10 Histórias de Usuário (US01 a US10)**, contemplando nós de decisão, guardas lógicas e caminhos de exceção:
+
+| ID | História de Usuário | Card no Jira | Diagrama UML | Foco do Fluxo |
+| :---: | :--- | :---: | :---: | :--- |
+| **US01** | Movimentação no Datacenter | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | [Ver Diagrama](./docs/img/diagramas/AD_US01_movimentacao_engenheiro.png) | Captura de teclas (WASD), colisão com racks e game loop |
+| **US02** | Telemetria de Integridade e Foco | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | [Ver Diagrama](./docs/img/diagramas/AD_US02_telemetria_e_iluminacao.png) | Monitoramento de HP, foco no cursor e alertas de sobrecarga |
+| **US03** | Módulos Neurais Trancados | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | [Ver Diagrama](./docs/img/diagramas/AD_US03_navegacao_modulos_trancados.png) | Barreira neural, validação de diretrizes e desbloqueio de setores |
+| **US04** | Inspeção de Terminais Guardrails | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | [Ver Diagrama](./docs/img/diagramas/AD_US04_inspecao_terminais_guardrails.png) | Proximidade de racks, prompt contextual [E] e painel de auditoria |
+| **US05** | Terminal de Inserção de Diretrizes | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | [Ver Diagrama](./docs/img/diagramas/AD_US05_interface_terminal_diretrizes.png) | Prompt `>_`, tokens coloridos (verde/amarelo/cinza) e progresso |
+| **US06** | Validação de Digitação em Tempo Real | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | [Ver Diagrama](./docs/img/diagramas/AD_US06_validacao_digitacao_tempo_real.png) | Filtro de WASD (esquiva sem erro), avanço de cursor e som de tecla |
+| **US07** | Avaliação de Precisão e Patches | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | [Ver Diagrama](./docs/img/diagramas/AD_US07_avaliacao_precisao_convergencia.png) | Avaliação pós-frase (Perfeito, Estável, Ruído) e avanço de alinhamento |
+| **US08** | Tratamento de Exceções e Penalidade | [PI2-74](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-74) | [Ver Diagrama](./docs/img/diagramas/AD_US08_tratamento_excecoes_penalidade.png) | Dano por lasers, recuo de token no terminal e invulnerabilidade |
+| **US09** | Coleta de Datasets Constitucionais | [PI2-75](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-75) | [Ver Diagrama](./docs/img/diagramas/AD_US09_coleta_datasets_diretrizes.png) | Coleta de pacotes de dados na arena e carregamento no buffer |
+| **US10** | Painel de Auditoria e Score | [PI2-76](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-76) | [Ver Diagrama](./docs/img/diagramas/AD_US10_painel_auditoria_relatorios.png) | Métricas de segurança (WPM, Acurácia, Pontos) e leaderboard |
+
+*(Exemplo de Modelagem: Diagrama de Atividades da US01)*  
+![Diagrama de Atividades US01](./docs/img/diagramas/AD_US01_movimentacao_engenheiro.png)
+
+---
+
+### 6.2. Prototipação Lo-Fi no Figma & Storyboard
+
+* **Link Oficial do Projeto no Figma:** [Acessar Protótipo Lo-Fi no Figma](https://www.figma.com/design/BJ1f5Y5TF1yfq1C3jVvRRZ/Sem-t%C3%ADtulo?node-id=0-1&t=RmzS9WKzO4lqzsr6-1)
+* **Visão Geral das Telas (Persona, Menu, Gameplay, Score, Tutorial):**
+  ![Telas do Protótipo Lo-Fi](./docs/img/Captura%20de%20tela%202026-09-04%20160432.png)
+
+#### Storyboard da Experiência do Operador:
+1. **Passo 1 (Menu Inicial):** [Ver Frame](./docs/img/storyboard/step1_menu_inicial.png) — Seleção de rotas via teclado retroiluminado.
+2. **Passo 2 (Tutorial):** [Ver Frame](./docs/img/storyboard/step2_tutorial_navegacao.png) — Aprendizado de comandos de movimentação e digitação.
+3. **Passo 3 (Arena Neural):** [Ver Frame](./docs/img/storyboard/step3_transicao_para_jogo.png) — Entrada no cluster com sobrecarga e telemetria da AURA-67.
+4. **Passo 4 (Digitação e Alinhamento):** [Ver Frame](./docs/img/storyboard/step4_gameplay_digitacao.png) — Inserção de diretrizes éticas em tempo real.
+5. **Passo 5 (Score e Auditoria):** [Ver Frame](./docs/img/storyboard/step5_score_ranking.png) — Consolidação de métricas e ranking local.
+
+---
+
+### 6.3. Matriz de Rastreabilidade Bidirecional
+
+| US | Requisito / Card Jira | Diagrama UML | Tela Lo-Fi (Figma) | Módulo em C (Código) |
+| :---: | :---: | :---: | :---: | :---: |
+| **US01** | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | `AD-US01` | Gameplay Arena | [`src/player.c`](./src/player.c) |
+| **US02** | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | `AD-US02` | Gameplay Arena | [`src/ui.c`](./src/ui.c) |
+| **US03** | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | `AD-US03` | Gameplay Arena | [`src/boss.c`](./src/boss.c) |
+| **US04** | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | `AD-US04` | Gameplay Arena | [`src/player.c`](./src/player.c) |
+| **US05** | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | `AD-US05` | Terminal Neural | [`src/typing_engine.c`](./src/typing_engine.c) |
+| **US06** | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | `AD-US06` | Tutorial / Terminal | [`src/typing_engine.c`](./src/typing_engine.c) |
+| **US07** | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | `AD-US07` | Terminal / HUD | [`src/typing_engine.c`](./src/typing_engine.c) |
+| **US08** | [PI2-74](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-74) | `AD-US08` | Arena / HUD | [`src/player.c`](./src/player.c) |
+| **US09** | [PI2-75](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-75) | `AD-US09` | Arena Gameplay | [`src/bullet.c`](./src/bullet.c) |
+| **US10** | [PI2-76](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-76) | `AD-US10` | Painel de Score | [`src/ui.c`](./src/ui.c) |
+
+---
+
+### 6.4. Demonstração (Screencast)
+
+* **Arquivo de Vídeo da Demonstração:** [Acessar vídeo docs/img/2026-09-04 12-29-24.mp4](./docs/img/2026-09-04%2012-29-24.mp4)
+* **Legenda / Transcrição do Fluxo:**
+  * **00:00 – 00:06:** Navegação no Menu Inicial e seleção do Tutorial.
+  * **00:07 – 00:13:** Leitura das mecânicas de movimentação e alinhamento de IA.
+  * **00:14 – 00:20:** Retorno ao Menu e inicialização da partida.
+  * **00:21 – 00:28:** Gameplay na Arena: esquiva de projéteis e digitação da diretriz ética no terminal inferior.
+  * **00:29 – 00:34:** Exibição do painel de Score e posicionamento no ranking de operadores.
+
+---
+
+## 7. Estrutura do Repositório
 
 ```text
 pi2-squad-e7/
 ├── bin/                       # Executáveis compilados (ignorado no Git)
 ├── docs/                      # Documentações de Requisitos, IHC, LMC e Gestão
+│   ├── entrega_02_modelagem_prototipacao.md # Documento técnico completo da Entrega 02 (FDS)
 │   ├── historias_de_usuario.md# As 15 Histórias de Usuário completas de AI Safety (3Cs)
 │   ├── pm_canvas.md           # Project Model Canvas de AI Safety (FP2)
-│   └── img/                   # Imagens e prints de evidências para o README
+│   └── img/                   # Diagramas UML, telas do Figma Lo-Fi e vídeos
+│       ├── diagramas/         # 10 Diagramas de Atividades UML (US01 a US10)
+│       ├── lofi/              # Telas individuais do protótipo no Figma
+│       └── storyboard/        # Quadros sequenciais da jornada do usuário
 ├── include/                   # Cabeçalhos de bibliotecas gráficas (Raylib C99)
 │   ├── raylib.h
 │   ├── raymath.h
@@ -135,7 +211,7 @@ pi2-squad-e7/
 
 ---
 
-## 7. Como Compilar e Executar o Jogo Gráfico
+## 8. Como Compilar e Executar o Jogo Gráfico
 
 O jogo possui interface gráfica 2D completa em tempo real desenvolvida em **C99** utilizando a biblioteca **Raylib**.
 
@@ -151,3 +227,4 @@ make run
 # Limpar arquivos binários compilados
 make clean
 ```
+
