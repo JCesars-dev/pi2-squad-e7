@@ -110,7 +110,29 @@ W01 - W04: Concepção & Setup                       W09 - W12: Port Haskell & R
 └── 15 Histórias de Usuário (Jira)                 └── Módulo de Persistência Avançado (FDS)
 
 W05 - W08: Protótipo Jogável de AI Safety em C     W13 - W17: Versão Final & Validação
-├── Motor Web Canvas (IHC/PIF)                     ├── Fechamento do Produto e Testes de Carga
-├── Validador de Proposições em C (LMC)            ├── Demonstração de Banca e Apresentação
+├── Motor Gráfico 2D em C99 (PIF)                  ├── Fechamento do Produto e Testes de Carga
+├── Validador de Proposições e Lógica (LMC)        ├── Demonstração de Banca e Apresentação
 └── Entrega do MVP 1 (U1)                          └── Relatório Final de Encerramento (FP2)
 ```
+
+---
+
+### 6. Revisão do Canvas & Resultados do MVP 1 (Fechamento da Unidade 1)
+
+*Responsável pela Revisão:* Larissa Almeida (Lead de Engenharia de Software / FP2)  
+*Data de Atualização:* 24/09/2026 (Sprint W08)
+
+#### 6.1. Riscos Mitigados no MVP 1
+1. **Gargalo de Performance Gráfica:** Mitigado com sucesso através da arquitetura C99 desacoplada (física, partículas e renderização), mantendo taxa estável de 60 FPS com consumo mínimo de recursos.
+2. **Conflito de Input (Movimentação vs. Digitação):** Mitigado pelo filtro no motor de digitação (`typing_engine.c`), permitindo esquiva ágil com WASD sem penalidades acidentais no buffer de diretrizes.
+3. **Escopo e Rastreabilidade:** Mitigado pela manutenção rigorosa das 15 Histórias de Usuário no Jira e correspondência biunívoca com a estrutura do código.
+
+#### 6.2. Premissas Validadas
+* O formato de arena 2D com terminal retrô retroiluminado (`>_`) atende aos princípios de usabilidade e reforça o alinhamento ético e didático do jogo.
+* A cadência quinzenal com acompanhamento no Jira manteve 100% das entregas das semanas W02, W06 e W08 dentro do prazo regulamentar da CESAR School.
+
+#### 6.3. Transição para a Unidade 2
+* **Foco Técnico:** Portar o validador de diretrizes e inferências lógicas para Haskell (PIF/LMC).
+* **Foco de IHC:** Executar testes empíricos de usabilidade presenciais com a persona definida.
+* **Foco de FDS/FP2:** Implementar arquitetura de persistência e refinar métricas de velocidade da equipe.
+
