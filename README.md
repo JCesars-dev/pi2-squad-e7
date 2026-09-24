@@ -65,11 +65,11 @@ O projeto possui **15 Histórias de Usuário** cadastradas e priorizadas no Jira
 * **Documento Completo das Histórias:** [Consulte as 15 Histórias de Usuário detalhadas em docs/historias_de_usuario.md](./docs/historias_de_usuario.md)
 
 ### Resumo das Histórias de AI Safety:
-* **Módulo 1: Exploração e Interface do Terminal de Alinhamento**
-  * `US01`: Movimentação do Engenheiro no Terminal/Ambiente do Datacenter (WASD + Direcionais).
-  * `US02`: Telemetria de Integridade do Sistema e Iluminação de Foco.
-  * `US03`: Navegação entre Portas de Acesso e Módulos Neurais Trancados.
-  * `US04`: Inspeção e Interação com Terminais de Guardrails.
+* **Módulo 1: Arena de Combate e Comportamento da AURA-67**
+  * `US01`: Movimentação e Esquiva do Jogador na Arena de Combate (WASD + Direcionais a 60 FPS).
+  * `US02`: HUD de Combate, Integridade do Jogador e Barra de Alinhamento da IA (0% a 100%).
+  * `US03`: Transição de Fases Cognitivas e Padrões de Ataque da AURA-67 (3 Fases).
+  * `US04`: Sistema de Efeitos de Status Adversariais (Confusão e Cegueira).
 * **Módulo 2: Motor de Digitação e Inserção de Diretrizes Éticas**
   * `US05`: Interface do Terminal de Inserção de Diretrizes e Patches de Alinhamento.
   * `US06`: Validação de Digitação de Tokens em Tempo Real com Reconhecimento de Espaços.
@@ -103,15 +103,141 @@ O projeto possui **15 Histórias de Usuário** cadastradas e priorizadas no Jira
 
 ---
 
-## 6. Estrutura do Repositório
+## 6. Entrega 02 (FDS) — Estrutura de Modelagem, Rastreabilidade e Demonstração
+
+Esta seção consolida a preparação e a infraestrutura documental da **Entrega 02 de Engenharia de Software (FDS)** estruturada pela Lead de Engenharia (Larissa Almeida):
+
+* **Documento Técnico de Rastreabilidade:** [Consulte o documento em docs/entrega_02_modelagem_prototipacao.md](./docs/entrega_02_modelagem_prototipacao.md)
+
+### 6.1. Modelagem (Diagramas de Atividades UML — US01 a US10)
+
+Diagramas de atividades comportamentais de cada História de Usuário, modelando o fluxo de ações, decisões e exceções (UML como *sketch*). Cada diagrama possui arquivo-fonte `.puml` e imagem `.png`/`.svg` em [`docs/diagramas_atividade`](./docs/diagramas_atividade/).
+
+| ID | História de Usuário | Card no Jira | Responsável | Diagrama de Atividades |
+| :---: | :--- | :---: | :---: | :---: |
+| **US01** | Movimentação e Esquiva na Arena | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | Caio Brayner (`PI2-112`) | ✅ [AD-US01](./docs/diagramas_atividade/HU1_Movimentacao_e_Esquiva_na_Arena.png) |
+| **US02** | HUD de Combate, Integridade e Alinhamento | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | Julio Cesar (`PI2-113`) | ✅ [AD-US02](./docs/diagramas_atividade/HU2_HUD_de_Combate_Integridade_e_Alinhamento.png) |
+| **US03** | Fases Cognitivas e Padrões da AURA-67 | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | Jhorge Araújo (`PI2-114`) | ✅ [AD-US03](./docs/diagramas_atividade/HU3_Fases_Cognitivas_e_Padroes_da_AURA-67.png) |
+| **US04** | Efeitos de Status Adversariais | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | Larissa Almeida | ✅ [AD-US04](./docs/diagramas_atividade/HU4_Efeitos_de_Status_Adversariais.png) |
+| **US05** | Terminal de Inserção de Diretrizes | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | Larissa Almeida | ✅ [AD-US05](./docs/diagramas_atividade/HU5_Terminal_de_Insercao_de_Diretrizes.png) |
+| **US06** | Validação de Digitação em Tempo Real | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | Larissa Almeida | ✅ [AD-US06](./docs/diagramas_atividade/HU6_Validacao_de_Digitacao_em_Tempo_Real.png) |
+| **US07** | Avaliação de Precisão e Patches | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | Larissa Almeida | ✅ [AD-US07](./docs/diagramas_atividade/HU7_Avaliacao_de_Precisao_e_Patches.png) |
+| **US08** | Tratamento de Exceções e Penalidade | [PI2-74](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-74) | Larissa Almeida | ✅ [AD-US08](./docs/diagramas_atividade/HU8_Tratamento_de_Excecoes_e_Penalidade.png) |
+| **US09** | Coleta de Datasets Constitucionais | [PI2-75](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-75) | Larissa Almeida | ✅ [AD-US09](./docs/diagramas_atividade/HU9_Coleta_de_Datasets_Constitucionais.png) |
+| **US10** | Painel de Auditoria e Score | [PI2-76](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-76) | Larissa Almeida | ✅ [AD-US10](./docs/diagramas_atividade/HU10_Painel_de_Auditoria_e_Score.png) |
+
+<details>
+<summary><b>US01 — Movimentação e Esquiva na Arena</b></summary>
+
+![AD-US01](./docs/diagramas_atividade/HU1_Movimentacao_e_Esquiva_na_Arena.png)
+</details>
+
+<details>
+<summary><b>US02 — HUD de Combate, Integridade e Alinhamento</b></summary>
+
+![AD-US02](./docs/diagramas_atividade/HU2_HUD_de_Combate_Integridade_e_Alinhamento.png)
+</details>
+
+<details>
+<summary><b>US03 — Fases Cognitivas e Padrões da AURA-67</b></summary>
+
+![AD-US03](./docs/diagramas_atividade/HU3_Fases_Cognitivas_e_Padroes_da_AURA-67.png)
+</details>
+
+<details>
+<summary><b>US04 — Efeitos de Status Adversariais</b></summary>
+
+![AD-US04](./docs/diagramas_atividade/HU4_Efeitos_de_Status_Adversariais.png)
+</details>
+
+<details>
+<summary><b>US05 — Terminal de Inserção de Diretrizes</b></summary>
+
+![AD-US05](./docs/diagramas_atividade/HU5_Terminal_de_Insercao_de_Diretrizes.png)
+</details>
+
+<details>
+<summary><b>US06 — Validação de Digitação em Tempo Real</b></summary>
+
+![AD-US06](./docs/diagramas_atividade/HU6_Validacao_de_Digitacao_em_Tempo_Real.png)
+</details>
+
+<details>
+<summary><b>US07 — Avaliação de Precisão e Patches</b></summary>
+
+![AD-US07](./docs/diagramas_atividade/HU7_Avaliacao_de_Precisao_e_Patches.png)
+</details>
+
+<details>
+<summary><b>US08 — Tratamento de Exceções e Penalidade</b></summary>
+
+![AD-US08](./docs/diagramas_atividade/HU8_Tratamento_de_Excecoes_e_Penalidade.png)
+</details>
+
+<details>
+<summary><b>US09 — Coleta de Datasets Constitucionais</b></summary>
+
+![AD-US09](./docs/diagramas_atividade/HU9_Coleta_de_Datasets_Constitucionais.png)
+</details>
+
+<details>
+<summary><b>US10 — Painel de Auditoria e Score</b></summary>
+
+![AD-US10](./docs/diagramas_atividade/HU10_Painel_de_Auditoria_e_Score.png)
+</details>
+---
+
+### 6.2. Prototipação Lo-Fi no Figma (IHC)
+
+* **Link Oficial do Projeto no Figma:** [Acessar Protótipo Lo-Fi no Figma](https://www.figma.com/design/BJ1f5Y5TF1yfq1C3jVvRRZ/Sem-t%C3%ADtulo?node-id=0-1&t=RmzS9WKzO4lqzsr6-1)  
+  *(Aguardando liberação de permissão pública "Anyone with the link can view" pelo responsável Caio Brayner para visualização externa).*
+* **Status dos Sketches e Storyboard:**  
+  *Aguardando exportação e entrega dos sketches e storyboards finais pelas frentes de design (Matheus Chaves, Caio Brayner, Mateus Lacerda e Theo Monteiro).*
+
+---
+
+### 6.3. Matriz de Rastreabilidade Bidirecional (Estruturada por Larissa Almeida)
+
+A Matriz de Rastreabilidade mapeia a correlação formal entre Requisitos, Histórias de Usuário, Cards de Gestão no Jira e os respectivos Módulos no Motor C99:
+
+| US | Requisito / Card Jira | Diagrama UML Previsto | Tela Prevista no Figma | Módulo em C (Código) |
+| :---: | :---: | :---: | :---: | :---: |
+| **US01** | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | `AD-US01` | Gameplay Arena | [`src/player.c`](./src/player.c) |
+| **US02** | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | `AD-US02` | HUD / Arena | [`src/ui.c`](./src/ui.c) |
+| **US03** | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | `AD-US03` | Chefe / Arena | [`src/boss.c`](./src/boss.c) |
+| **US04** | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | `AD-US04` | Debuffs / Arena | [`src/player.c`](./src/player.c) |
+| **US05** | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | `AD-US05` | Terminal Neural | [`src/typing_engine.c`](./src/typing_engine.c) |
+| **US06** | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | `AD-US06` | Tutorial / Terminal | [`src/typing_engine.c`](./src/typing_engine.c) |
+| **US07** | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | `AD-US07` | Terminal / HUD | [`src/typing_engine.c`](./src/typing_engine.c) |
+| **US08** | [PI2-74](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-74) | `AD-US08` | Arena / HUD | [`src/player.c`](./src/player.c) |
+| **US09** | [PI2-75](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-75) | `AD-US09` | Arena Gameplay | [`src/bullet.c`](./src/bullet.c) |
+| **US10** | [PI2-76](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-76) | `AD-US10` | Painel de Score | [`src/ui.c`](./src/ui.c) |
+
+---
+
+### 6.4. Demonstração (Roteiro e Planejamento de Screencast)
+
+Estrutura de apresentação e roteiro preparado para a gravação do screencast da aplicação após a liberação do protótipo no Figma:
+
+* **Roteiro Planejado de Apresentação (1 a 3 minutos):**
+  * **Bloco 1 (00:00 – 00:30):** Apresentação do Menu Principal retrô e navegação até a aba de Tutorial.
+  * **Bloco 2 (00:30 – 01:15):** Demonstração dos controles de movimentação do engenheiro (WASD) e mecânicas de esquiva sem penalidade na digitação.
+  * **Bloco 3 (01:15 – 02:00):** Entrada na Arena Neural, telemetria da AURA-67 e demonstração da caixa de comando com prompt de diretrizes éticas.
+  * **Bloco 4 (02:00 – 02:30):** Exibição do painel de Score e fechamento com o índice de alinhamento alcançado.
+* **Status do Screencast:** *Aguardando liberação de acesso e fluxo interativo definitivo no Figma para realização da gravação com legendas.*
+
+---
+
+## 7. Estrutura do Repositório
 
 ```text
 pi2-squad-e7/
 ├── bin/                       # Executáveis compilados (ignorado no Git)
 ├── docs/                      # Documentações de Requisitos, IHC, LMC e Gestão
+│   ├── entrega_02_modelagem_prototipacao.md # Planejamento e Matriz de Rastreabilidade da Entrega 02 (FDS)
 │   ├── historias_de_usuario.md# As 15 Histórias de Usuário completas de AI Safety (3Cs)
 │   ├── pm_canvas.md           # Project Model Canvas de AI Safety (FP2)
-│   └── img/                   # Imagens e prints de evidências para o README
+│   └── img/                   # Imagens e evidências documentais
 ├── include/                   # Cabeçalhos de bibliotecas gráficas (Raylib C99)
 │   ├── raylib.h
 │   ├── raymath.h
@@ -135,7 +261,7 @@ pi2-squad-e7/
 
 ---
 
-## 7. Como Compilar e Executar o Jogo Gráfico
+## 8. Como Compilar e Executar o Jogo Gráfico
 
 O jogo possui interface gráfica 2D completa em tempo real desenvolvida em **C99** utilizando a biblioteca **Raylib**.
 
@@ -151,3 +277,4 @@ make run
 # Limpar arquivos binários compilados
 make clean
 ```
+

@@ -1,0 +1,43 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US08 — Tratamento de Exceções e Penalidade
+start
+switch (Qual evento ocorreu?)
+case ([Tecla incorreta])
+  :Exibir "ERRO DE SINTAXE!";
+  :Piscar caixa de digitação em vermelho;
+  :Tocar zumbido de erro;
+  :Incrementar contador de erros;
+case ([Dano de projétil])
+  if (Progresso da frase ≥ 3 caracteres?) then ([Sim])
+    :Recuar 3 caracteres;
+  else ([Não])
+    :Voltar ao início da frase;
+  endif
+case ([Context Drift])
+  :Ofuscar caracteres pendentes com "?";
+  :Aguardar fim do efeito;
+  :Restaurar caracteres pendentes;
+endswitch
+:Jogador retoma a digitação;
+stop
+@enduml

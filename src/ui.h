@@ -48,7 +48,8 @@ void ui_draw_typing_box(const TypingEngine *te);
 void ui_draw_floating_texts(const UIManager *ui);
 void ui_draw_particles(const UIManager *ui);
 void ui_draw_menu(int difficulty);
-void ui_draw_game_over(void);
-void ui_draw_victory(void);
+void ui_draw_hud_stats(int score, int alignment_pct);
+void ui_draw_game_over(int score);
+void ui_draw_victory(int score);
 
 #endif /* UI_H */

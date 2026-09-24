@@ -19,6 +19,7 @@ void boss_init(Boss *b, float x, float y, int difficulty) {
     b->timer_laser = 0.0f;
     b->timer_vortex = 0.0f;
     b->spiral_angle = 0.0f;
+    b->alignment_pct = 0;
 }
 
 int boss_get_phase(const Boss *b) {

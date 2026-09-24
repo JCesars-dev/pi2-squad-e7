@@ -1,0 +1,44 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US01 — Movimentação e Esquiva na Arena
+start
+:Iniciar arena de combate;
+repeat
+  :Ler teclado;
+  if (WASD ou seta pressionada?) then ([Sim])
+    :Calcular nova posição do operador;
+    if (Nova posição ultrapassa a borda da arena?) then ([Sim])
+      :Bloquear movimento na borda;
+    else ([Não])
+      :Atualizar posição do operador;
+    endif
+  else ([Não])
+  endif
+  if (Operador colidiu com projétil?) then ([Sim])
+    :Reduzir 1 de integridade (vida);
+  else ([Não])
+  endif
+  :Renderizar quadro (60 FPS);
+repeat while (Operador ainda tem vidas?) is ([Sim]) not ([Não])
+:Encerrar partida (Game Over);
+stop
+@enduml

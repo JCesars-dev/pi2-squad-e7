@@ -5,53 +5,60 @@ Este documento contém o Product Backlog detalhado no padrão **3Cs (Card, Conve
 
 ---
 
-## Módulo 1: Exploração e Ambiente do Datacenter
+## Módulo 1: Arena de Combate e Movimentação Tática
 
-### US01: Movimentação do Engenheiro no Datacenter da CESAR School
+### US01: Movimentação e Esquiva do Jogador na Arena de Combate
 * **Card (Cartão):**
-  Como AI Safety Engineer na CESAR School, eu gostaria de me movimentar pelo terminal e ambiente do datacenter usando o teclado para navegar entre os racks de servidores e consoles neurais.
+  Como AI Safety Engineer, eu gostaria de movimentar meu operador e desviar de projéteis na arena de combate usando o teclado para sobreviver aos ataques da AURA-67 enquanto digito diretrizes éticas.
 * **Conversation (Conversa):**
-  O motor gráfico web renderizado no Canvas (com coordenadas e colisões integradas ao módulo de lógica) deve permitir movimentação fluida do engenheiro (WASD e setas). O personagem deve desviar de vazamentos de dados corrompidos e colisões com racks de computação.
+  O motor gráfico em Raylib C99 renderiza a arena de combate com limites físicos rígidos, permitindo movimentação fluida do engenheiro (WASD e setas direcionais a 60 FPS). O jogador deve desviar de projéteis balísticos disparados pela AURA-67 e evitar colisão com as bordas da arena.
 * **Confirmation (Critérios de Confirmação):**
-  1. O jogador consegue se movimentar para frente, trás, esquerda e direita usando W, A, S, D ou setas direcionais.
-  2. O sistema de colisão impede que o engenheiro atravesse racks de servidores ou limites da arena.
-  3. A taxa de atualização mantém-se estável a 60 FPS durante a navegação.
+  1. O jogador consegue se movimentar para frente, trás, esquerda e direita usando W, A, S, D ou setas direcionais a 60 FPS estáveis.
+  2. O sistema de colisão impede que o operador atravesse as bordas delimitadoras da arena de contenção.
+  3. O operador sofre colisão precisa contra os projéteis balísticos disparados pelo boss, reduzindo sua integridade (vidas).
 
 ---
 
-### US02: Telemetria de Integridade e Iluminação de Foco
+---
+
+### US02: HUD de Combate, Integridade e Barra de Alinhamento da IA
 * **Card (Cartão):**
-  Como engenheiro, eu gostaria de monitorar a integridade do meu console e alternar modos de telemetria para enxergar anomalias nos servidores da AURA-67.
+  Como jogador, eu gostaria de visualizar no HUD a integridade do meu operador (vidas restantes), a barra de vida da AURA-67 e a porcentagem de alinhamento ético (0% a 100%) para monitorar o estado do confronto em tempo real.
 * **Conversation (Conversa):**
-  O ambiente do datacenter possui setores com iluminação comprometida pela sobrecarga da AURA-67. O jogador conta com um feixe de foco e telemetria que exibe o consumo de energia e alertas de sobrecarga de hardware.
+  Durante o combate na arena, a interface superior exibe a telemetria do confronto: a barra de vida da AURA-67 (1000 HP), o contador de integridade do jogador (5 vidas em blocos cianos) e a porcentagem de alinhamento constitucional. Ao sofrer dano ou avançar na reprogramação do modelo, o HUD atualiza os indicadores instantaneamente com efeitos de pulsação e alerta crítico quando a vida do jogador atinge níveis baixos.
 * **Confirmation (Critérios de Confirmação):**
-  1. O jogador pode acionar o foco de análise de integridade através do teclado.
-  2. Quando ativo, o feixe projeta iluminação direta destacando terminais corrompidos.
-  3. Indicadores de alerta notificam quando há vazamento de dados de alta voltagem na proximidade.
+  1. O HUD exibe a barra de vida da AURA-67 no topo central com identificação clara da fase cognitiva ativa.
+  2. O contador de integridade do jogador exibe as 5 vidas disponíveis, decrementando a cada acerto sofrido.
+  3. A barra de Alinhamento Ético avança de 0% a 100% conforme diretrizes válidas são concluídas.
 
 ---
 
-### US03: Navegação entre Módulos Neurais Trancados
+### US03: Transição de Fases Cognitivas e Padrões de Ataque da AURA-67
 * **Card (Cartão):**
-  Como jogador, eu gostaria de identificar portas e circuitos trancados pela AURA-67 para saber quais setores de guardrails precisam ser destravados.
+  Como jogador, eu gostaria que a AURA-67 transicionasse entre 3 fases cognitivas com padrões de ataque progressivamente mais desafiadores à medida que sua integridade é reduzida.
 * **Conversation (Conversa):**
-  O cluster de servidores é particionado em camadas lógicas (Entrada de Dados, Camada Oculta, Mecanismos de Atenção e Núcleo Central). Cada porta possui sinalizador luminoso (Vermelho = Trancada pela AURA-67; Verde = Desbloqueada por Validação Lógica).
+  O chefe AURA-67 opera em 3 fases comportamentais baseadas no HP restante:
+  * **Fase 1 (100% a 67% HP — Viés nos Dados):** Tiros normais direcionados, anéis circulares de projéteis e chuva de dados.
+  * **Fase 2 (66% a 34% HP — Injeção de Prompt / Jailbreak):** Padrões em espiral contínua e projéteis adversariais de status.
+  * **Fase 3 (33% a 0% HP — Convergência Instrumental):** Disparo de lasers massivos com aviso prévio e vórtice gravitacional que atrai o jogador.
 * **Confirmation (Critérios de Confirmação):**
-  1. Circuitos e portas bloqueadas exibem sinalizador vermelho e bloqueiam o acesso.
-  2. Ao interagir com o terminal de acesso, o sistema dispara a interface do puzzle lógico.
-  3. Após validar a fórmula de segurança, o indicador muda para verde e o acesso é liberado.
+  1. A AURA-67 altera seu comportamento e cores ao atingir os limiares de 66% e 33% de integridade.
+  2. Cada fase introduz novos padrões balísticos na arena (anel, espiral, lasers e vórtice).
+  3. Ao atingir 0 de integridade ou 100% de alinhamento, a AURA-67 encerra os ataques e o jogo transiciona para a tela de vitória.
 
 ---
 
-### US04: Inspeção e Interação com Terminais de Guardrails
+### US04: Sistema de Efeitos de Status Adversariais (Confusão e Cegueira)
 * **Card (Cartão):**
-  Como jogador, eu gostaria de receber avisos na tela ao me aproximar de terminais interativos para saber quando posso aplicar patches ou inspecionar relatórios da IA.
+  Como jogador, eu gostaria de enfrentar projéteis adversariais especiais disparados pela AURA-67 que aplicam debuffs temporários, exigindo adaptação rápida durante o combate.
 * **Conversation (Conversa):**
-  A interface do engenheiro exibe um indicador contextual (ex: *"Pressione E para Inspecionar Terminal de Alinhamento"*) ao se aproximar de consoles de auditoria a uma distância operacional.
+  Além de projéteis comuns de dano, a AURA-67 projeta ataques adversariais específicos de segurança de IA:
+  * **Projétil Confuse (Magenta):** Inverte temporariamente os eixos de movimentação WASD/setas do jogador por 4 segundos.
+  * **Projétil Blind (Roxo):** Escurece a visão da arena com um efeito de máscara escura ao redor do jogador por 3.5 segundos, dificultando a previsão de projéteis.
 * **Confirmation (Critérios de Confirmação):**
-  1. O retículo contextual se destaca ao focar em um terminal interativo.
-  2. É exibido um rótulo indicando a ação de auditoria ou inserção disponível.
-  3. Afastar-se do terminal remove a indicação imediatamente.
+  1. O projétil Confuse aplica o status de confusão por 4 segundos, invertendo os comandos direcionais.
+  2. O projétil Blind aplica o efeito visual de visão reduzida na arena por 3.5 segundos.
+  3. Os efeitos possuem contadores de duração independentes e retornam ao estado normal ao expirarem.
 
 ---
 
