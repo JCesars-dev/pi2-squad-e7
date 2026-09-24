@@ -5,17 +5,17 @@ Este documento contém o Product Backlog detalhado no padrão **3Cs (Card, Conve
 
 ---
 
-## Módulo 1: Exploração e Ambiente do Datacenter
+## Módulo 1: Arena de Combate e Movimentação Tática
 
-### US01: Movimentação do Engenheiro no Datacenter da CESAR School
+### US01: Movimentação e Esquiva do Jogador na Arena de Combate
 * **Card (Cartão):**
-  Como AI Safety Engineer na CESAR School, eu gostaria de me movimentar pelo terminal e ambiente do datacenter usando o teclado para navegar entre os racks de servidores e consoles neurais.
+  Como AI Safety Engineer, eu gostaria de movimentar meu operador e desviar de projéteis na arena de combate usando o teclado para sobreviver aos ataques da AURA-67 enquanto digito diretrizes éticas.
 * **Conversation (Conversa):**
-  O motor gráfico web renderizado no Canvas (com coordenadas e colisões integradas ao módulo de lógica) deve permitir movimentação fluida do engenheiro (WASD e setas). O personagem deve desviar de vazamentos de dados corrompidos e colisões com racks de computação.
+  O motor gráfico em Raylib C99 renderiza a arena de combate com limites físicos rígidos, permitindo movimentação fluida do engenheiro (WASD e setas direcionais a 60 FPS). O jogador deve desviar de projéteis balísticos disparados pela AURA-67 e evitar colisão com as bordas da arena.
 * **Confirmation (Critérios de Confirmação):**
-  1. O jogador consegue se movimentar para frente, trás, esquerda e direita usando W, A, S, D ou setas direcionais.
-  2. O sistema de colisão impede que o engenheiro atravesse racks de servidores ou limites da arena.
-  3. A taxa de atualização mantém-se estável a 60 FPS durante a navegação.
+  1. O jogador consegue se movimentar para frente, trás, esquerda e direita usando W, A, S, D ou setas direcionais a 60 FPS estáveis.
+  2. O sistema de colisão impede que o operador atravesse as bordas delimitadoras da arena de contenção.
+  3. O operador sofre colisão precisa contra os projéteis balísticos disparados pelo boss, reduzindo sua integridade (vidas).
 
 ---
 
