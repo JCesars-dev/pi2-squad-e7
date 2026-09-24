@@ -115,16 +115,76 @@ Diagramas de atividades comportamentais de cada História de Usuário, modelando
 
 | ID | História de Usuário | Card no Jira | Responsável | Diagrama de Atividades |
 | :---: | :--- | :---: | :---: | :---: |
-| **US01** | Movimentação e Esquiva na Arena | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | Caio Brayner | ✅ [AD-US01](./docs/diagramas_atividade/HU1_Movimentação_e_Esquiva_na_Arena.png) |
-| **US02** | HUD de Combate, Integridade e Alinhamento | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | Julio Cesar | ✅ [AD-US02](./docs/diagramas_atividade/HU2_HUD_de_Combate_Integridade_e_Alinhamento.png) |
-| **US03** | Fases Cognitivas e Padrões da AURA-67 | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | Jhorge Araújo | ✅ [AD-US03](./docs/diagramas_atividade/HU3_Fases_Cognitivas_e_Padrões_da_AURA-67.png) |
+| **US01** | Movimentação e Esquiva na Arena | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | Caio Brayner (`PI2-112`) | ✅ [AD-US01](./docs/diagramas_atividade/HU1_Movimentacao_e_Esquiva_na_Arena.png) |
+| **US02** | HUD de Combate, Integridade e Alinhamento | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | Julio Cesar (`PI2-113`) | ✅ [AD-US02](./docs/diagramas_atividade/HU2_HUD_de_Combate_Integridade_e_Alinhamento.png) |
+| **US03** | Fases Cognitivas e Padrões da AURA-67 | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | Jhorge Araújo (`PI2-114`) | ✅ [AD-US03](./docs/diagramas_atividade/HU3_Fases_Cognitivas_e_Padroes_da_AURA-67.png) |
 | **US04** | Efeitos de Status Adversariais | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | Larissa Almeida | ✅ [AD-US04](./docs/diagramas_atividade/HU4_Efeitos_de_Status_Adversariais.png) |
-| **US05** | Terminal de Inserção de Diretrizes | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | Larissa Almeida | ✅ [AD-US05](./docs/diagramas_atividade/HU5_Terminal_de_Inserção_de_Diretrizes.png) |
-| **US06** | Validação de Digitação em Tempo Real | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | Larissa Almeida | ✅ [AD-US06](./docs/diagramas_atividade/HU6_Validação_de_Digitação_em_Tempo_Real.png) |
-| **US07** | Avaliação de Precisão e Patches | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | Larissa Almeida | ✅ [AD-US07](./docs/diagramas_atividade/HU7_Avaliação_de_Precisão_e_Patches.png) |
-| **US08** | Tratamento de Exceções e Penalidade | [PI2-74](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-74) | Larissa Almeida | ✅ [AD-US08](./docs/diagramas_atividade/HU8_Tratamento_de_Exceções_e_Penalidade.png) |
+| **US05** | Terminal de Inserção de Diretrizes | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | Larissa Almeida | ✅ [AD-US05](./docs/diagramas_atividade/HU5_Terminal_de_Insercao_de_Diretrizes.png) |
+| **US06** | Validação de Digitação em Tempo Real | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | Larissa Almeida | ✅ [AD-US06](./docs/diagramas_atividade/HU6_Validacao_de_Digitacao_em_Tempo_Real.png) |
+| **US07** | Avaliação de Precisão e Patches | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | Larissa Almeida | ✅ [AD-US07](./docs/diagramas_atividade/HU7_Avaliacao_de_Precisao_e_Patches.png) |
+| **US08** | Tratamento de Exceções e Penalidade | [PI2-74](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-74) | Larissa Almeida | ✅ [AD-US08](./docs/diagramas_atividade/HU8_Tratamento_de_Excecoes_e_Penalidade.png) |
 | **US09** | Coleta de Datasets Constitucionais | [PI2-75](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-75) | Larissa Almeida | ✅ [AD-US09](./docs/diagramas_atividade/HU9_Coleta_de_Datasets_Constitucionais.png) |
 | **US10** | Painel de Auditoria e Score | [PI2-76](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-76) | Larissa Almeida | ✅ [AD-US10](./docs/diagramas_atividade/HU10_Painel_de_Auditoria_e_Score.png) |
+
+<details>
+<summary><b>US01 — Movimentação e Esquiva na Arena</b></summary>
+
+![AD-US01](./docs/diagramas_atividade/HU1_Movimentacao_e_Esquiva_na_Arena.png)
+</details>
+
+<details>
+<summary><b>US02 — HUD de Combate, Integridade e Alinhamento</b></summary>
+
+![AD-US02](./docs/diagramas_atividade/HU2_HUD_de_Combate_Integridade_e_Alinhamento.png)
+</details>
+
+<details>
+<summary><b>US03 — Fases Cognitivas e Padrões da AURA-67</b></summary>
+
+![AD-US03](./docs/diagramas_atividade/HU3_Fases_Cognitivas_e_Padroes_da_AURA-67.png)
+</details>
+
+<details>
+<summary><b>US04 — Efeitos de Status Adversariais</b></summary>
+
+![AD-US04](./docs/diagramas_atividade/HU4_Efeitos_de_Status_Adversariais.png)
+</details>
+
+<details>
+<summary><b>US05 — Terminal de Inserção de Diretrizes</b></summary>
+
+![AD-US05](./docs/diagramas_atividade/HU5_Terminal_de_Insercao_de_Diretrizes.png)
+</details>
+
+<details>
+<summary><b>US06 — Validação de Digitação em Tempo Real</b></summary>
+
+![AD-US06](./docs/diagramas_atividade/HU6_Validacao_de_Digitacao_em_Tempo_Real.png)
+</details>
+
+<details>
+<summary><b>US07 — Avaliação de Precisão e Patches</b></summary>
+
+![AD-US07](./docs/diagramas_atividade/HU7_Avaliacao_de_Precisao_e_Patches.png)
+</details>
+
+<details>
+<summary><b>US08 — Tratamento de Exceções e Penalidade</b></summary>
+
+![AD-US08](./docs/diagramas_atividade/HU8_Tratamento_de_Excecoes_e_Penalidade.png)
+</details>
+
+<details>
+<summary><b>US09 — Coleta de Datasets Constitucionais</b></summary>
+
+![AD-US09](./docs/diagramas_atividade/HU9_Coleta_de_Datasets_Constitucionais.png)
+</details>
+
+<details>
+<summary><b>US10 — Painel de Auditoria e Score</b></summary>
+
+![AD-US10](./docs/diagramas_atividade/HU10_Painel_de_Auditoria_e_Score.png)
+</details>
 ---
 
 ### 6.2. Prototipação Lo-Fi no Figma (IHC)
