@@ -65,11 +65,11 @@ O projeto possui **15 Histórias de Usuário** cadastradas e priorizadas no Jira
 * **Documento Completo das Histórias:** [Consulte as 15 Histórias de Usuário detalhadas em docs/historias_de_usuario.md](./docs/historias_de_usuario.md)
 
 ### Resumo das Histórias de AI Safety:
-* **Módulo 1: Exploração e Interface do Terminal de Alinhamento**
-  * `US01`: Movimentação do Engenheiro no Terminal/Ambiente do Datacenter (WASD + Direcionais).
-  * `US02`: Telemetria de Integridade do Sistema e Iluminação de Foco.
-  * `US03`: Navegação entre Portas de Acesso e Módulos Neurais Trancados.
-  * `US04`: Inspeção e Interação com Terminais de Guardrails.
+* **Módulo 1: Arena de Combate e Comportamento da AURA-67**
+  * `US01`: Movimentação e Esquiva do Jogador na Arena de Combate (WASD + Direcionais a 60 FPS).
+  * `US02`: HUD de Combate, Integridade do Jogador e Barra de Alinhamento da IA (0% a 100%).
+  * `US03`: Transição de Fases Cognitivas e Padrões de Ataque da AURA-67 (3 Fases).
+  * `US04`: Sistema de Efeitos de Status Adversariais (Confusão e Cegueira).
 * **Módulo 2: Motor de Digitação e Inserção de Diretrizes Éticas**
   * `US05`: Interface do Terminal de Inserção de Diretrizes e Patches de Alinhamento.
   * `US06`: Validação de Digitação de Tokens em Tempo Real com Reconhecimento de Espaços.
@@ -115,10 +115,10 @@ Estrutura reservada para incorporação dos diagramas de atividades comportament
 
 | ID | História de Usuário | Card no Jira | Responsável | Status da Modelagem |
 | :---: | :--- | :---: | :---: | :--- |
-| **US01** | Movimentação no Datacenter | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | Caio Brayner (`PI2-112`) | *Pendente de elaboração pelo responsável* |
-| **US02** | Telemetria de Integridade e Foco | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | Julio Cesar (`PI2-113`) | *Pendente de elaboração pelo responsável* |
-| **US03** | Módulos Neurais Trancados | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | Jhorge Araújo (`PI2-114`) | *Pendente de elaboração pelo responsável* |
-| **US04** | Inspeção de Terminais Guardrails | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | Squad E7 | *Pendente de elaboração pelo responsável* |
+| **US01** | Movimentação e Esquiva na Arena | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | Caio Brayner (`PI2-112`) | *Pendente de elaboração pelo responsável* |
+| **US02** | HUD de Combate, Integridade e Alinhamento | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | Julio Cesar (`PI2-113`) | *Pendente de elaboração pelo responsável* |
+| **US03** | Fases Cognitivas e Padrões da AURA-67 | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | Jhorge Araújo (`PI2-114`) | *Pendente de elaboração pelo responsável* |
+| **US04** | Efeitos de Status Adversariais | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | Squad E7 | *Pendente de elaboração pelo responsável* |
 | **US05** | Terminal de Inserção de Diretrizes | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | Squad E7 | *Pendente de elaboração pelo responsável* |
 | **US06** | Validação de Digitação em Tempo Real | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | Squad E7 | *Pendente de elaboração pelo responsável* |
 | **US07** | Avaliação de Precisão e Patches | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | Squad E7 | *Pendente de elaboração pelo responsável* |
@@ -144,9 +144,9 @@ A Matriz de Rastreabilidade mapeia a correlação formal entre Requisitos, Hist�
 | US | Requisito / Card Jira | Diagrama UML Previsto | Tela Prevista no Figma | Módulo em C (Código) |
 | :---: | :---: | :---: | :---: | :---: |
 | **US01** | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | `AD-US01` | Gameplay Arena | [`src/player.c`](./src/player.c) |
-| **US02** | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | `AD-US02` | Gameplay Arena | [`src/ui.c`](./src/ui.c) |
-| **US03** | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | `AD-US03` | Gameplay Arena | [`src/boss.c`](./src/boss.c) |
-| **US04** | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | `AD-US04` | Gameplay Arena | [`src/player.c`](./src/player.c) |
+| **US02** | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | `AD-US02` | HUD / Arena | [`src/ui.c`](./src/ui.c) |
+| **US03** | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | `AD-US03` | Chefe / Arena | [`src/boss.c`](./src/boss.c) |
+| **US04** | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | `AD-US04` | Debuffs / Arena | [`src/player.c`](./src/player.c) |
 | **US05** | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | `AD-US05` | Terminal Neural | [`src/typing_engine.c`](./src/typing_engine.c) |
 | **US06** | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | `AD-US06` | Tutorial / Terminal | [`src/typing_engine.c`](./src/typing_engine.c) |
 | **US07** | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | `AD-US07` | Terminal / HUD | [`src/typing_engine.c`](./src/typing_engine.c) |
