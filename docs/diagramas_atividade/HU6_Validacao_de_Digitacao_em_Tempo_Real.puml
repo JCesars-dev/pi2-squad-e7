@@ -1,0 +1,45 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US06 — Validação de Digitação em Tempo Real
+start
+repeat
+  :Interceptar tecla pressionada;
+  if (É WASD ou seta direcional?) then ([Sim])
+    :Mover personagem sem penalidade na frase;
+  elseif (É Espaço?) then ([Sim])
+    if (Diretriz espera espaço nessa posição?) then ([Sim])
+      :Separar termo e avançar cursor;
+    else ([Não])
+      :Registrar erro (US08);
+    endif
+  else ([Não])
+    if (Caractere igual ao esperado?) then ([Sim])
+      :Avançar cursor;
+      :Tocar som de tecla mecânica;
+    else ([Não])
+      :Registrar erro (US08);
+    endif
+  endif
+repeat while (Diretriz completa?) is ([Não]) not ([Sim])
+:Enviar para avaliação (US07);
+stop
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US02 — HUD de Combate, Integridade e Alinhamento
+start
+:Iniciar combate;
+:Exibir HUD: vida da AURA-67 (1000 HP) e fase ativa;
+:Exibir 5 vidas (blocos cianos) e alinhamento em 0%;
+repeat
+  if (Jogador sofreu dano?) then ([Sim])
+    :Decrementar 1 bloco de integridade com pulsação;
+    if (Vidas em nível crítico?) then ([Sim])
+      :Exibir alerta crítico;
+    else ([Não])
+    endif
+  elseif (Diretriz válida concluída?) then ([Sim])
+    :Avançar barra de Alinhamento Ético;
+    :Atualizar barra de vida da AURA-67;
+  else ([Não])
+    :Manter indicadores;
+  endif
+repeat while (Combate em andamento?) is ([Sim]) not ([Não])
+stop
+@enduml

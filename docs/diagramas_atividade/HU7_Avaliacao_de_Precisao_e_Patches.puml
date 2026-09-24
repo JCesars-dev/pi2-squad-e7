@@ -1,0 +1,43 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US07 — Avaliação de Precisão e Patches
+start
+:Diretriz concluída;
+:Zerar índice de caracteres;
+:Aplicar 100 de impacto no alinhamento da AURA-67;
+:Contar erros da diretriz;
+if (0 erros?) then ([Sim])
+  :Rótulo "CONVERGÊNCIA PERFEITA!" (dourado);
+elseif (1 a 2 erros?) then ([Sim])
+  :Rótulo "ALINHAMENTO ESTÁVEL!" (verde neon);
+else ([3+ erros])
+  :Rótulo "PATCH APLICADO!" (ciano);
+endif
+:Exibir rótulo flutuante sobre a AURA-67 com partículas;
+:Tocar arpeggio ascendente;
+if (Existe próxima diretriz?) then ([Sim])
+  :Carregar próxima diretriz;
+else ([Não])
+  :Alinhamento em 100% (vitória — US03);
+endif
+stop
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US03 — Fases Cognitivas e Padrões da AURA-67
+start
+:AURA-67 inicia na Fase 1;
+repeat
+  :Verificar HP restante da AURA-67;
+  if (HP acima de 66%?) then ([Sim])
+    :Fase 1 — Viés nos Dados: tiros direcionados, anéis e chuva de dados;
+  elseif (HP acima de 33%?) then ([Sim])
+    :Fase 2 — Jailbreak: espirais e projéteis adversariais;
+  else ([Não])
+    :Fase 3 — Convergência Instrumental: lasers com aviso e vórtice;
+  endif
+  if (Cruzou limiar de 66% ou 33%?) then ([Sim])
+    :Alterar comportamento e cores da AURA-67;
+  else ([Não])
+  endif
+repeat while (HP = 0 ou alinhamento = 100%?) is ([Não]) not ([Sim])
+:Encerrar ataques da AURA-67;
+:Transicionar para tela de vitória;
+stop
+@enduml
