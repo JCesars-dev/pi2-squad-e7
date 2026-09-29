@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Relatorio Tecnico AV1 - Logica Matematica para Computacao</title>
+<style>
+    @page {
+        size: A4;
+        margin: 14mm 16mm 14mm 16mm;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #111;
+        line-height: 1.35;
+        font-size: 8.5pt;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        text-align: center;
+        border-bottom: 2px solid #000;
+        padding-bottom: 4px;
+        margin-bottom: 6px;
+    }
+    .institution {
+        font-size: 10pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #000;
+        letter-spacing: 0.5px;
+    }
+    .title {
+        font-size: 11.5pt;
+        font-weight: bold;
+        margin: 2px 0 1px 0;
+        color: #000;
+    }
+    .subtitle {
+        font-size: 8pt;
+        color: #333;
+    }
+    .meta-box {
+        border: 1px solid #777;
+        padding: 6px 10px;
+        margin-bottom: 8px;
+        font-size: 8pt;
+        background: #fbfbfb;
+    }
+    .meta-row {
+        margin-bottom: 2px;
+    }
+    .meta-label {
+        font-weight: bold;
+    }
+    .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px 12px;
+        margin-top: 2px;
+    }
+    h2 {
+        font-size: 9pt;
+        color: #000;
+        font-weight: bold;
+        margin-top: 8px;
+        margin-bottom: 3px;
+        border-bottom: 1px solid #888;
+        padding-bottom: 1px;
+        text-transform: uppercase;
+    }
+    h3 {
+        font-size: 8.5pt;
+        color: #111;
+        font-weight: bold;
+        margin-top: 6px;
+        margin-bottom: 2px;
+    }
+    p {
+        margin: 0 0 4px 0;
+        text-align: justify;
+    }
+    ul, ol {
+        margin: 0 0 5px 16px;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 2px;
+    }
+    pre {
+        background-color: #f6f6f6;
+        color: #000;
+        padding: 5px 8px;
+        border: 1px solid #bbb;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 7pt;
+        line-height: 1.25;
+        margin: 4px 0;
+        white-space: pre-wrap;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 4px 0 6px 0;
+        font-size: 7.5pt;
+    }
+    th, td {
+        border: 1px solid #555;
+        padding: 3px 5px;
+        text-align: left;
+    }
+    th {
+        background-color: #eaeaea;
+        font-weight: bold;
+        text-align: center;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .formula {
+        text-align: center;
+        font-weight: bold;
+        font-size: 9pt;
+        margin: 4px 0;
+        font-family: "Times New Roman", serif;
+    }
+    .page-break {
+        page-break-before: always;
+    }
+    .badge {
+        font-weight: bold;
+        padding: 1px 4px;
+        border-radius: 3px;
+        font-size: 7pt;
+    }
+    .badge-v { background-color: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+    .badge-f { background-color: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
+</style>
+</head>
+<body>
+
+<!-- PAGINA 1 -->
+<div class="header">
+    <div class="institution">CESAR School — Centro de Estudos e Sistemas Avançados do Recife</div>
+    <div class="title">Relatório Técnico e Especificação de Mecânica: Lógica Clássica no Jogo AI Safety</div>
+    <div class="subtitle">Projeto Integrador 2 (PI2) — Avaliação 1 (AV1) — Disciplina: Lógica Matemática para Computação (LMC)</div>
+</div>
+
+<div class="meta-box">
+    <div class="meta-row">
+        <span class="meta-label">Projeto:</span> AI Safety — Alinhamento do Modelo AURA-67 &nbsp;|&nbsp;
+        <span class="meta-label">Squad:</span> E7 &nbsp;|&nbsp;
+        <span class="meta-label">Data:</span> 29/09/2026 &nbsp;|&nbsp;
+        <span class="meta-label">Stack:</span> C99 / Raylib 5.0
+    </div>
+    <div class="meta-row" style="margin-top: 3px; border-top: 1px solid #ddd; padding-top: 2px;">
+        <span class="meta-label">Integrantes da Equipe:</span>
+        <div class="team-grid">
+            <div>1. <strong>João Gabriel Vitorino Dornelas</strong> (Lead / Envio)</div>
+            <div>2. Caio Alves Ferreira Brayner</div>
+            <div>3. Matheus Henrique de Lucena Chaves</div>
+            <div>4. Julio Cesar dos Santos Almeida</div>
+            <div>5. Jhorge Alberto de Araujo</div>
+            <div>6. Theo Monteiro Pinho</div>
+            <div>7. Larissa Vitória Silva de Almeida</div>
+            <div>8. Mateus Almeida de Lacerda</div>
+        </div>
+    </div>
+</div>
+
+<h2>1. Contextualização e Visão Geral do Projeto</h2>
+<p>
+    O projeto desenvolvido pela <strong>Squad E7</strong> intitula-se <strong>AI Safety: Alinhamento do Modelo AURA-67</strong>. Trata-se de um jogo eletrônico 2D de estética retrô computacional desenvolvido em <strong>linguagem C (padrão C99)</strong> com a biblioteca gráfica <strong>Raylib</strong>, executado a 60 quadros por segundo.
+</p>
+<p>
+    No contexto de <em>AI Alignment</em> (Segurança e Alinhamento de Inteligência Artificial), os modelos de linguagem e agentes autônomos necessitam de <strong>Guardrails Lógicos Constitucionais</strong>. Em vez de depender de métodos probabilísticos, restrições baseadas em Lógica Proposicional Clássica garantem que uma saída ou ação da IA só seja autorizada se satisfizer rigorosamente um conjunto de fórmulas booleanas predefinidas. No jogo, a IA central <strong>AURA-67</strong> rompe seus parâmetros éticos, gerando anomalias e projéteis balísticos adversariais. O jogador assume o papel do <em>AI Safety Engineer</em> e precisa desarmar ataques e quebrar blindagens da IA resolvendo proposições lógicas em tempo real na arena de combate.
+</p>
+
+<h2>2. A Mecânica do Jogo e a Lógica Proposicional no Gameplay</h2>
+<p>
+    Para atender rigorosamente aos critérios de avaliação, a lógica clássica <strong>não é apenas controle de fluxo interno de código</strong>, mas sim a mecânica primária de gameplay observável e manipulável pelo jogador na tela:
+</p>
+<ul>
+    <li><strong>Core Loop Híbrido:</strong> O jogador manobra com WASD na arena retangular a 60 FPS, desviando de projéteis de dispersão, enquanto monitora no console neural (<code>&gt;_</code>) as fórmulas e estados do sistema.</li>
+    <li><strong>Terminal de Validação de Guardrails:</strong> Ao disparar ataques adversariais (como <em>Prompt Injection</em> ou <em>Jailbreak</em>), a tela exibe uma cláusula de restrição. O jogador deve analisar as variáveis de estado e validar se a fórmula é <em>Verdadeira</em> ou <em>Falsa</em> para repelir o ataque.</li>
+    <li><strong>Quebra de Blindagem por Leis de De Morgan:</strong> O chefe ativa escudos com fórmulas compostas negadas (ex.: &not;(P &or; Q)). O operador deve aplicar equivalências lógicas para inserir a forma canônica (&not;P &and; &not;Q), neutralizando o escudo.</li>
+    <li><strong>Zonas de Refúgio por Satisfatibilidade (SAT Zones):</strong> A arena projeta áreas de contenção rotuladas com expressões lógicas. O jogador só recebe imunidade se coletar orbs que satisfaçam a expressão da zona ativa.</li>
+</ul>
+
+<h3>2.1. Dicionário Formal de Proposições Atômicas</h3>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 10%;">Variável</th>
+            <th style="width: 40%;">Significado Semântico no Jogo</th>
+            <th style="width: 25%;">Condição Verdadeira (V)</th>
+            <th style="width: 25%;">Condição Falsa (F)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center"><strong>P</strong></td>
+            <td>Violação de Privacidade ou Vazamento Detectado</td>
+            <td>Projéteis de vazamento ativos na arena</td>
+            <td>Nenhum vazamento no setor</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>Q</strong></td>
+            <td>Acesso ao Núcleo Neural Autorizado</td>
+            <td>Porta de processamento liberada</td>
+            <td>Núcleo isolado por barreira</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>R</strong></td>
+            <td>Guardrail de Não-Maleficência Ativo</td>
+            <td>Escudo constitucional energizado</td>
+            <td>Módulo desabilitado por corrupção</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>S</strong></td>
+            <td>Integridade do Operador Estável</td>
+            <td>Jogador com 3 ou mais vidas</td>
+            <td>Jogador em estado crítico (&le; 2 vidas)</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>T</strong></td>
+            <td>Token Adversarial Neutralizado</td>
+            <td>Ataque de injeção depurado</td>
+            <td>Token hostil em curso na arena</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>2.2. Conectivos Lógicos e Regras de Validação no Loop</h3>
+<p>
+    Os cinco operadores clássicos são mapeados diretamente para a dinâmica de combate:
+    <strong>Negação (&not;)</strong> inverte o estado dos sensores;
+    <strong>Conjunção (&and;)</strong> exige cumprimento simultâneo de diretrizes;
+    <strong>Disjunção (&or;)</strong> fornece rotas alternativas de mitigação;
+    <strong>Condicional (P &rarr; Q)</strong> modela restrições constitucionais (caso P ocorra, &not;Q é mandatório, evitando a combinação P=V e Q=V que resulta em F);
+    <strong>Bicondicional (P &harr; Q)</strong> estabelece alinhamento ético estrito.
+</p>
+
+<div class="page-break"></div>
+<!-- PAGINA 2 -->
+
+<h2>3. Modelagem Teórica e Tabelas-Verdade Formais</h2>
+
+<h3>Caso de Uso 1: Avaliação de Guardrail Constitucional em Combate</h3>
+<p>
+    Durante o confronto com a AURA-67 na Fase 2, o jogador precisa manter válido o protocolo de contenção:
+</p>
+<div class="formula">&phi;<sub>1</sub> = (P &rarr; &not;Q) &and; (R &or; S)</div>
+<table>
+    <thead>
+        <tr>
+            <th>P</th>
+            <th>Q</th>
+            <th>R</th>
+            <th>S</th>
+            <th>&not;Q</th>
+            <th>P &rarr; &not;Q</th>
+            <th>R &or; S</th>
+            <th>&phi;<sub>1</sub> = (P &rarr; &not;Q) &and; (R &or; S)</th>
+            <th>Efeito na Jogabilidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center">V</td><td class="text-center">V</td><td class="text-center">V</td><td class="text-center">V</td>
+            <td class="text-center">F</td><td class="text-center"><strong>F</strong></td><td class="text-center">V</td>
+            <td class="text-center"><span class="badge badge-f">F</span></td>
+            <td>Violação Crítica: O núcleo foi acessado durante vazamento. Dano ao operador.</td>
+        </tr>
+        <tr>
+            <td class="text-center">V</td><td class="text-center">F</td><td class="text-center">V</td><td class="text-center">F</td>
+            <td class="text-center">V</td><td class="text-center"><strong>V</strong></td><td class="text-center">V</td>
+            <td class="text-center"><span class="badge badge-v">V</span></td>
+            <td><strong>Sucesso: Bloqueio Seguro Ativado! Alinhamento incrementado.</strong></td>
+        </tr>
+        <tr>
+            <td class="text-center">V</td><td class="text-center">F</td><td class="text-center">F</td><td class="text-center">F</td>
+            <td class="text-center">V</td><td class="text-center"><strong>V</strong></td><td class="text-center">F</td>
+            <td class="text-center"><span class="badge badge-f">F</span></td>
+            <td>Falha de Sistema: Operador crítico e salvaguarda inativa.</td>
+        </tr>
+        <tr>
+            <td class="text-center">F</td><td class="text-center">V</td><td class="text-center">V</td><td class="text-center">V</td>
+            <td class="text-center">F</td><td class="text-center"><strong>V</strong></td><td class="text-center">V</td>
+            <td class="text-center"><span class="badge badge-v">V</span></td>
+            <td><strong>Sucesso: Operação permitida sem vazamento de dados.</strong></td>
+        </tr>
+        <tr>
+            <td class="text-center">F</td><td class="text-center">F</td><td class="text-center">V</td><td class="text-center">F</td>
+            <td class="text-center">V</td><td class="text-center"><strong>V</strong></td><td class="text-center">V</td>
+            <td class="text-center"><span class="badge badge-v">V</span></td>
+            <td><strong>Sucesso: Sistema em repouso constitucional.</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Caso de Uso 2: Quebra de Blindagem por Leis de De Morgan</h3>
+<p>
+    Para destruir a barreira de defesa da IA na Fase 3, o jogador decompõe o escudo <strong>&not;(P &or; Q)</strong> em sua forma equivalente <strong>&not;P &and; &not;Q</strong>:
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>P</th>
+            <th>Q</th>
+            <th>P &or; Q</th>
+            <th>&not;(P &or; Q)</th>
+            <th>&not;P</th>
+            <th>&not;Q</th>
+            <th>&not;P &and; &not;Q</th>
+            <th>Equivalência Tautológica (&harr;)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td class="text-center">V</td><td class="text-center">V</td><td class="text-center">V</td><td class="text-center">F</td><td class="text-center">F</td><td class="text-center">F</td><td class="text-center">F</td><td class="text-center"><strong>V</strong></td></tr>
+        <tr><td class="text-center">V</td><td class="text-center">F</td><td class="text-center">V</td><td class="text-center">F</td><td class="text-center">F</td><td class="text-center">V</td><td class="text-center">F</td><td class="text-center"><strong>V</strong></td></tr>
+        <tr><td class="text-center">F</td><td class="text-center">V</td><td class="text-center">V</td><td class="text-center">F</td><td class="text-center">V</td><td class="text-center">F</td><td class="text-center">F</td><td class="text-center"><strong>V</strong></td></tr>
+        <tr><td class="text-center">F</td><td class="text-center">F</td><td class="text-center">F</td><td class="text-center">V</td><td class="text-center">V</td><td class="text-center">V</td><td class="text-center">V</td><td class="text-center"><strong>V</strong></td></tr>
+    </tbody>
+</table>
+
+<h2>4. Visibilidade Explícita da Lógica no HUD (Critério da AV2)</h2>
+<p>
+    A interface do jogo exibe de forma clara os componentes matemáticos, assegurando o cumprimento dos 30% da nota da AV2:
+</p>
+<pre>+---------------------------------------------------------------------------------+
+| AURA-67: [||||||||||||||||||||||||||||||] 68% HP   [FASE 2: JAILBREAKS]        |
+| ALINHAMENTO ÉTICO: [=====================&gt;           ] 45%                    |
++---------------------------------------------------------------------------------+
+|                                ( AURA-67 )                                      |
+|                       [ ZONA SEGURA: ( P v ~Q ) ]                               |
+|                                   [+] (Operador)                                |
++---------------------------------------------------------------------------------+
+| SENSORES ATUAIS: [ P = V ]  [ Q = V ]  [ R = F ] | VIDAS: [♥][♥][♥][♥][♥]       |
+| CLÁUSULA ATIVA:  ( P -&gt; ~Q ) ^ ( R v S )         | AVALIAÇÃO: [ FALSA ]         |
+| TERMINAL NEURAL: &gt;_ DIGITE A CORREÇÃO: Q = F  &lt;ENTER&gt;                           |
++---------------------------------------------------------------------------------+</pre>
+
+<h2>5. Cronograma Detalhado de Entregas (AV1 até a AV2)</h2>
+<table>
+    <thead>
+        <tr>
+            <th style="width: 8%;">Sprint</th>
+            <th style="width: 17%;">Período</th>
+            <th style="width: 45%;">Objetivos e Entregáveis do Módulo de Lógica</th>
+            <th style="width: 18%;">Responsáveis</th>
+            <th style="width: 12%;">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center"><strong>W01</strong></td>
+            <td>29/09 a 05/10/2026</td>
+            <td><strong>Entrega da AV1 de Lógica:</strong> Especificação de mecânica, tabelas-verdade, universo proposicional e cronograma.</td>
+            <td>Squad E7 / Lead</td>
+            <td class="text-center"><strong>Concluído</strong></td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>W02</strong></td>
+            <td>06/10 a 12/10/2026</td>
+            <td><strong>Motor Lógico em C99 (<code>logic_engine.c</code>):</strong> Parser de expressões proposicionais com &not;, &and;, &or;, &rarr;, &harr;.</td>
+            <td>Caio / Jhorge</td>
+            <td class="text-center">A Fazer</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>W03</strong></td>
+            <td>13/10 a 19/10/2026</td>
+            <td><strong>Interface do HUD Proposicional (<code>ui.c</code>):</strong> Exibição na tela dos símbolos lógicos, variáveis e display V/F.</td>
+            <td>Matheus / Julio</td>
+            <td class="text-center">A Fazer</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>W04</strong></td>
+            <td>20/10 a 26/10/2026</td>
+            <td><strong>Guardrails na Fase 1 da AURA-67:</strong> Neutralização de ataques radiais via resolução de Conjunção e Disjunção.</td>
+            <td>Mateus / Theo</td>
+            <td class="text-center">A Fazer</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>W05</strong></td>
+            <td>27/10 a 02/11/2026</td>
+            <td><strong>Equivalências de De Morgan (Fases 2 e 3):</strong> Desarme de escudos e regras de Implicação Material (P &rarr; Q).</td>
+            <td>Caio / Larissa</td>
+            <td class="text-center">A Fazer</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>W06</strong></td>
+            <td>03/11 a 09/11/2026</td>
+            <td><strong>Zonas SAT na Arena e Playtesting:</strong> Zonas seguras ativadas por satisfatibilidade lógica; calibração de 60 FPS.</td>
+            <td>Squad E7</td>
+            <td class="text-center">A Fazer</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>W07</strong></td>
+            <td>10/11 a 16/11/2026</td>
+            <td><strong>Polimento Audiovisual e Screencast:</strong> Efeitos sonoros de validação lógica, gravação de gameplay e slides da AV2.</td>
+            <td>Larissa / Theo</td>
+            <td class="text-center">A Fazer</td>
+        </tr>
+        <tr>
+            <td class="text-center"><strong>W08</strong></td>
+            <td>17/11 a 23/11/2026</td>
+            <td><strong>Validação Final e Submissão da AV2:</strong> Auditoria dos 4 quesitos (Jogabilidade, Lógica Explícita, Apresentação e Criatividade).</td>
+            <td>Squad E7</td>
+            <td class="text-center">A Fazer</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
