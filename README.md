@@ -228,20 +228,54 @@ pi2-squad-e7/
 
 ---
 
-## 8. Como Compilar e Executar o Jogo Gráfico
+## 8. Como Compilar e Executar o Jogo Gráfico (PIF — Unidade 1)
 
-O jogo possui interface gráfica 2D completa em tempo real desenvolvida em **C99** utilizando a biblioteca **Raylib**.
+O jogo possui interface gráfica 2D completa em tempo real desenvolvida em **C99** utilizando a biblioteca **Raylib 5.0**. Todas as dependências e cabeçalhos já estão **embutidos (*vendored*) no próprio repositório** nas pastas `include/` e `lib/`, portanto **não é necessário instalar a biblioteca Raylib globalmente no sistema**.
 
-### Compilação e Execução via Makefile:
+### 8.1. Execução no Linux / Ubuntu / WSL:
+Basta clonar o repositório e executar via terminal:
 
 ```bash
-# Compilar o jogo em C (gera bin/jogo com zero warnings)
+# 1. Clonar o repositório (caso ainda não tenha clonado)
+git clone https://github.com/vdornelass/pi2-squad-e7.git
+cd pi2-squad-e7
+
+# 2. Compilar o projeto (gera bin/jogo com zero erros e zero advertências)
 make
 
-# Executar o jogo na janela gráfica (900x700 a 60 FPS)
+# 3. Executar o jogo na janela gráfica (900x700 a 60 FPS)
 make run
-
-# Limpar arquivos binários compilados
-make clean
+# ou diretamente:
+./bin/jogo
 ```
+
+### 8.2. Execução no Windows:
+* **Via WSL / WSLg (Recomendado):**
+  Dê um duplo clique no script [`jogar.bat`](./jogar.bat) na raiz do repositório, ou execute no PowerShell:
+  ```powershell
+  .\jogar.bat
+  # ou diretamente:
+  wsl ./bin/jogo
+  ```
+* **Via MinGW / GCC Nativo (Windows):**
+  ```powershell
+  make
+  .\bin\jogo.exe
+  ```
+
+---
+
+### 8.3. Comandos e Controles do Jogo
+
+| Tela / Estado | Teclas de Ação | Descrição |
+| :--- | :---: | :--- |
+| **Menu Inicial** | `[1]` ou `[N]` | Selecionar Modo Normal (Supervisionado) |
+| | `[2]` ou `[D]` | Selecionar Modo Difícil (AGI Unconstrained) |
+| | `[ESPAÇO]` ou `[ENTER]` | Iniciar sessão de combate e alinhamento neural |
+| **Arena de Combate** | `[WASD]` ou `[SETAS]` | Mover o engenheiro e esquivar dos projéteis balísticos a 60 FPS |
+| | `[DIGITAÇÃO]` | Digitar no teclado as 10 diretrizes éticas constitucionais |
+| **Fim de Partida** | `[R]` | Reiniciar partida imediatamente |
+| | `[M]` | Retornar ao Menu Principal |
+| | `[ESC]` | Fechar e sair do jogo |
+
 
