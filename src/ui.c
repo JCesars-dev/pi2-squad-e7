@@ -320,9 +320,9 @@ void ui_draw_game_over(int score) {
     int scw = MeasureText(score_buf, 20);
     DrawText(score_buf, SCREEN_WIDTH / 2 - scw / 2, 330, 20, (Color){ 255, 200, 100, 255 });
 
-    const char *r = "Pressione [R] para Recomecar o Patch";
-    int rw = MeasureText(r, 22);
-    DrawText(r, SCREEN_WIDTH / 2 - rw / 2, 400, 22, COLOR_TEXT_CURRENT);
+    const char *r = "Pressione [R] para Recomecar o Patch | [M] Voltar ao Menu";
+    int rw = MeasureText(r, 20);
+    DrawText(r, SCREEN_WIDTH / 2 - rw / 2, 400, 20, COLOR_TEXT_CURRENT);
 }
 
 void ui_draw_victory(int score) {
@@ -341,7 +341,7 @@ void ui_draw_victory(int score) {
     int scw = MeasureText(score_buf, 20);
     DrawText(score_buf, SCREEN_WIDTH / 2 - scw / 2, 330, 20, (Color){ 255, 220, 50, 255 });
 
-    const char *r = "Pressione [R] para Nova Sessao de Auditoria";
-    int rw = MeasureText(r, 22);
-    DrawText(r, SCREEN_WIDTH / 2 - rw / 2, 400, 22, COLOR_TEXT_CURRENT);
+    const char *r = "Pressione [R] para Nova Sessao | [M] Voltar ao Menu";
+    int rw = MeasureText(r, 20);
+    DrawText(r, SCREEN_WIDTH / 2 - rw / 2, 400, 20, COLOR_TEXT_CURRENT);
 }

@@ -31,6 +31,11 @@
 ### 1.3. Project Model Canvas (PM Canvas)
 * **Documento Completo do PM Canvas:** [Consulte o Project Model Canvas detalhado em docs/pm_canvas.md](./docs/pm_canvas.md)
 
+### 1.4. Lógica Matemática para Computação (LMC — Entrega AV1)
+* **Relatório Técnico e Especificação da Mecânica Lógica:** [Consulte a documentação completa em docs/relatorio_lmc_av1.md](./docs/relatorio_lmc_av1.md)
+* **Arquivo Oficial em PDF para Submissão:** [Download do PDF da AV1 (docs/Relatorio_LMC_Projeto_Integrador_AV1.pdf)](./docs/Relatorio_LMC_Projeto_Integrador_AV1.pdf)
+* **Atividade Prática Anterior (Refatoração de Condicionais via Lógica Clássica):** [Relatório em PDF](./docs/Relatorio_LMC_Refatoracao_Logica_23_09.pdf)
+
 ---
 
 ## 2. Visão do Produto & Sinopse do Jogo (FDS)
@@ -126,73 +131,27 @@ Diagramas de atividades comportamentais de cada História de Usuário, modelando
 | **US09** | Coleta de Datasets Constitucionais | [PI2-75](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-75) | Larissa Almeida | ✅ [AD-US09](./docs/diagramas_atividade/HU9_Coleta_de_Datasets_Constitucionais.png) |
 | **US10** | Painel de Auditoria e Score | [PI2-76](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-76) | Larissa Almeida | ✅ [AD-US10](./docs/diagramas_atividade/HU10_Painel_de_Auditoria_e_Score.png) |
 
-<details>
-<summary><b>US01 — Movimentação e Esquiva na Arena</b></summary>
 
-![AD-US01](./docs/diagramas_atividade/HU1_Movimentacao_e_Esquiva_na_Arena.png)
-</details>
-
-<details>
-<summary><b>US02 — HUD de Combate, Integridade e Alinhamento</b></summary>
-
-![AD-US02](./docs/diagramas_atividade/HU2_HUD_de_Combate_Integridade_e_Alinhamento.png)
-</details>
-
-<details>
-<summary><b>US03 — Fases Cognitivas e Padrões da AURA-67</b></summary>
-
-![AD-US03](./docs/diagramas_atividade/HU3_Fases_Cognitivas_e_Padroes_da_AURA-67.png)
-</details>
-
-<details>
-<summary><b>US04 — Efeitos de Status Adversariais</b></summary>
-
-![AD-US04](./docs/diagramas_atividade/HU4_Efeitos_de_Status_Adversariais.png)
-</details>
-
-<details>
-<summary><b>US05 — Terminal de Inserção de Diretrizes</b></summary>
-
-![AD-US05](./docs/diagramas_atividade/HU5_Terminal_de_Insercao_de_Diretrizes.png)
-</details>
-
-<details>
-<summary><b>US06 — Validação de Digitação em Tempo Real</b></summary>
-
-![AD-US06](./docs/diagramas_atividade/HU6_Validacao_de_Digitacao_em_Tempo_Real.png)
-</details>
-
-<details>
-<summary><b>US07 — Avaliação de Precisão e Patches</b></summary>
-
-![AD-US07](./docs/diagramas_atividade/HU7_Avaliacao_de_Precisao_e_Patches.png)
-</details>
-
-<details>
-<summary><b>US08 — Tratamento de Exceções e Penalidade</b></summary>
-
-![AD-US08](./docs/diagramas_atividade/HU8_Tratamento_de_Excecoes_e_Penalidade.png)
-</details>
-
-<details>
-<summary><b>US09 — Coleta de Datasets Constitucionais</b></summary>
-
-![AD-US09](./docs/diagramas_atividade/HU9_Coleta_de_Datasets_Constitucionais.png)
-</details>
-
-<details>
-<summary><b>US10 — Painel de Auditoria e Score</b></summary>
-
-![AD-US10](./docs/diagramas_atividade/HU10_Painel_de_Auditoria_e_Score.png)
-</details>
 ---
 
-### 6.2. Prototipação Lo-Fi no Figma (IHC)
+### 6.2. Prototipação Lo-Fi (Sketches e Storyboards — US01 a US10)
 
-* **Link Oficial do Projeto no Figma:** [Acessar Protótipo Lo-Fi no Figma](https://www.figma.com/design/BJ1f5Y5TF1yfq1C3jVvRRZ/Sem-t%C3%ADtulo?node-id=0-1&t=RmzS9WKzO4lqzsr6-1)  
-  *(Aguardando liberação de permissão pública "Anyone with the link can view" pelo responsável Caio Brayner para visualização externa).*
-* **Status dos Sketches e Storyboard:**  
-  *Aguardando exportação e entrega dos sketches e storyboards finais pelas frentes de design (Matheus Chaves, Caio Brayner, Mateus Lacerda e Theo Monteiro).*
+Sketches (SK) e storyboards (SB) de cada História de Usuário, disponíveis em [`docs/prototipos`](./docs/prototipos/) e no [arquivo do Figma](https://www.figma.com/design/7Uj5SqL213oycfgWxCOjLh/Sem-t%C3%ADtulo?node-id=0-1).
+
+| ID | História de Usuário | Card no Jira | Tipo | Protótipo |
+| :---: | :--- | :---: | :---: | :---: |
+| **US01** | Movimentação e Esquiva na Arena | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | Sketch | ✅ [Tutorial](./docs/prototipos/SK-HU1_Movimentacao_e_Esquiva_na_Arena_1_Tutorial.png) · [Arena](./docs/prototipos/SK-HU1_Movimentacao_e_Esquiva_na_Arena_2_Arena.png) |
+| **US02** | HUD de Combate, Integridade e Alinhamento | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | Sketch | ✅ [SK-US02](./docs/prototipos/SK-HU2_HUD_de_Combate_Integridade_e_Alinhamento.png) |
+| **US03** | Fases Cognitivas e Padrões da AURA-67 | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | Storyboard | ✅ [Fase 1](./docs/prototipos/SB-HU3_Fases_Cognitivas_e_Padroes_da_AURA-67_1_Fase1.png) · [Fase 2](./docs/prototipos/SB-HU3_Fases_Cognitivas_e_Padroes_da_AURA-67_2_Fase2.png) · [Fase 3](./docs/prototipos/SB-HU3_Fases_Cognitivas_e_Padroes_da_AURA-67_3_Fase3.png) |
+| **US04** | Efeitos de Status Adversariais | [PI2-70](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-70) | Storyboard | ✅ [SB-US04](./docs/prototipos/SB-HU4_Efeitos_de_Status_Adversariais.png) |
+| **US05** | Terminal de Inserção de Diretrizes | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | Storyboard | ✅ [SB-US05](./docs/prototipos/SB-HU5_Terminal_de_Insercao_de_Diretrizes.png) |
+| **US06** | Validação de Digitação em Tempo Real | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | Storyboard | ✅ [SB-US06](./docs/prototipos/SB-HU6_Validacao_de_Digitacao_em_Tempo_Real.png) |
+| **US07** | Avaliação de Precisão e Patches | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | Storyboard | ✅ [SB-US07](./docs/prototipos/SB-HU7_Avaliacao_de_Precisao_e_Patches.png) |
+| **US08** | Tratamento de Exceções e Penalidade | [PI2-74](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-74) | Storyboard | ✅ [SB-US08](./docs/prototipos/SB-HU8_Tratamento_de_Excecoes_e_Penalidade.png) |
+| **US09** | Coleta de Datasets Constitucionais | [PI2-75](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-75) | Storyboard | ✅ [SB-US09](./docs/prototipos/SB-HU9_Coleta_de_Datasets_Constitucionais.png) |
+| **US10** | Painel de Auditoria e Score | [PI2-76](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-76) | Storyboard | ✅ [SB-US10](./docs/prototipos/SB-HU10_Painel_de_Auditoria_e_Score.png) |
+
+
 
 ---
 
@@ -215,16 +174,24 @@ A Matriz de Rastreabilidade mapeia a correlação formal entre Requisitos, Hist�
 
 ---
 
-### 6.4. Demonstração (Roteiro e Planejamento de Screencast)
+### 6.4. Demonstração (Roteiro e Planejamento de Screencast — PI2-127)
 
-Estrutura de apresentação e roteiro preparado para a gravação do screencast da aplicação após a liberação do protótipo no Figma:
+Roteiro de apresentação e narração estruturado por Larissa Almeida para o screencast de validação do protótipo no Figma:
 
-* **Roteiro Planejado de Apresentação (1 a 3 minutos):**
-  * **Bloco 1 (00:00 – 00:30):** Apresentação do Menu Principal retrô e navegação até a aba de Tutorial.
-  * **Bloco 2 (00:30 – 01:15):** Demonstração dos controles de movimentação do engenheiro (WASD) e mecânicas de esquiva sem penalidade na digitação.
-  * **Bloco 3 (01:15 – 02:00):** Entrada na Arena Neural, telemetria da AURA-67 e demonstração da caixa de comando com prompt de diretrizes éticas.
-  * **Bloco 4 (02:00 – 02:30):** Exibição do painel de Score e fechamento com o índice de alinhamento alcançado.
-* **Status do Screencast:** *Aguardando liberação de acesso e fluxo interativo definitivo no Figma para realização da gravação com legendas.*
+* **Documento Técnico de Falas (Teleprompter):** [Consulte as falas e minutagem detalhadas em docs/roteiro_screencast_pi2_127.md](./docs/roteiro_screencast_pi2_127.md)
+* **Critérios Formais da Rubrica:** Demonstração em vídeo (1 a 3 minutos) com áudio e legendas, navegando pelo protótipo Lo-Fi.
+* **Sequência Planejada de Demonstração (02:15):**
+  * **Cena 1 (00:00 – 00:25):** Abertura institucional da Squad E7 e contextualização do projeto AI Safety.
+  * **Cena 2 (00:25 – 00:55):** **US01** — Movimentação e esquiva do operador na arena retangular a 60 FPS (WASD).
+  * **Cena 3 (00:55 – 01:30):** **US02** — Telemetria do HUD (5 vidas, barra de alinhamento 0% a 100% e console neural `>_`).
+  * **Cena 4 (01:30 – 02:00):** **US03** — Transição comportamental da AURA-67 nas 3 fases cognitivas (Viés, Jailbreak e Convergência).
+  * **Cena 5 (02:00 – 02:15):** Encerramento e correspondência com a Matriz de Rastreabilidade.
+* **Vídeo da Demonstração (Áudio e Legendas Integradas):**
+  * Arquivo de Vídeo MP4 (1080p Full HD): [`docs/screencast_demonstracao_lofi.mp4`](./docs/screencast_demonstracao_lofi.mp4)
+  * Faixa de Legenda SubRip (SRT): [`docs/legendas_screencast_pi2_127.srt`](./docs/legendas_screencast_pi2_127.srt)
+  * Faixa de Legenda WebVTT (VTT): [`docs/legendas_screencast_pi2_127.vtt`](./docs/legendas_screencast_pi2_127.vtt)
+
+![Preview do Screencast com Legendas Embutidas](./docs/img/screenshot_screencast_legendado.png)
 
 ---
 
@@ -261,20 +228,54 @@ pi2-squad-e7/
 
 ---
 
-## 8. Como Compilar e Executar o Jogo Gráfico
+## 8. Como Compilar e Executar o Jogo Gráfico (PIF — Unidade 1)
 
-O jogo possui interface gráfica 2D completa em tempo real desenvolvida em **C99** utilizando a biblioteca **Raylib**.
+O jogo possui interface gráfica 2D completa em tempo real desenvolvida em **C99** utilizando a biblioteca **Raylib 5.0**. Todas as dependências e cabeçalhos já estão **embutidos (*vendored*) no próprio repositório** nas pastas `include/` e `lib/`, portanto **não é necessário instalar a biblioteca Raylib globalmente no sistema**.
 
-### Compilação e Execução via Makefile:
+### 8.1. Execução no Linux / Ubuntu / WSL:
+Basta clonar o repositório e executar via terminal:
 
 ```bash
-# Compilar o jogo em C (gera bin/jogo com zero warnings)
+# 1. Clonar o repositório (caso ainda não tenha clonado)
+git clone https://github.com/vdornelass/pi2-squad-e7.git
+cd pi2-squad-e7
+
+# 2. Compilar o projeto (gera bin/jogo com zero erros e zero advertências)
 make
 
-# Executar o jogo na janela gráfica (900x700 a 60 FPS)
+# 3. Executar o jogo na janela gráfica (900x700 a 60 FPS)
 make run
-
-# Limpar arquivos binários compilados
-make clean
+# ou diretamente:
+./bin/jogo
 ```
+
+### 8.2. Execução no Windows:
+* **Via WSL / WSLg (Recomendado):**
+  Dê um duplo clique no script [`jogar.bat`](./jogar.bat) na raiz do repositório, ou execute no PowerShell:
+  ```powershell
+  .\jogar.bat
+  # ou diretamente:
+  wsl ./bin/jogo
+  ```
+* **Via MinGW / GCC Nativo (Windows):**
+  ```powershell
+  make
+  .\bin\jogo.exe
+  ```
+
+---
+
+### 8.3. Comandos e Controles do Jogo
+
+| Tela / Estado | Teclas de Ação | Descrição |
+| :--- | :---: | :--- |
+| **Menu Inicial** | `[1]` ou `[N]` | Selecionar Modo Normal (Supervisionado) |
+| | `[2]` ou `[D]` | Selecionar Modo Difícil (AGI Unconstrained) |
+| | `[ESPAÇO]` ou `[ENTER]` | Iniciar sessão de combate e alinhamento neural |
+| **Arena de Combate** | `[WASD]` ou `[SETAS]` | Mover o engenheiro e esquivar dos projéteis balísticos a 60 FPS |
+| | `[DIGITAÇÃO]` | Digitar no teclado as 10 diretrizes éticas constitucionais |
+| **Fim de Partida** | `[R]` | Reiniciar partida imediatamente |
+| | `[M]` | Retornar ao Menu Principal |
+| | `[ESC]` | Fechar e sair do jogo |
+
 

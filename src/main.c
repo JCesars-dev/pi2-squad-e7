@@ -179,6 +179,8 @@ int main(void) {
                 ui_init(&ui);
                 score = 0;
                 state = STATE_COMBAT;
+            } else if (IsKeyPressed(KEY_M)) {
+                state = STATE_MENU;
             }
         }
 
