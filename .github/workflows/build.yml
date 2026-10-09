@@ -1,0 +1,31 @@
+name: C99 Build & Sanity Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-linux:
+    name: Compilação C99 (Linux / Raylib)
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do Repositório
+      uses: actions/checkout@v4
+
+    - name: Instalar Dependências de Sistema do Raylib
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libgl1-mesa-dev libglu1-mesa-dev libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libasound2-dev
+
+    - name: Compilar via Makefile (C99 com flags rigorosas)
+      run: |
+        make clean
+        make
+
+    - name: Validar Executável Gerado
+      run: |
+        test -f bin/jogo
+        echo "Executável bin/jogo gerado com sucesso com zero advertências!"
