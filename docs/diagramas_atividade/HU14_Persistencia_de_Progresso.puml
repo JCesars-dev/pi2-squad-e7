@@ -1,0 +1,41 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US14 — Persistência de Progresso (Save/Load)
+start
+:Iniciar aplicação;
+if (Existe progresso salvo?) then ([Sim])
+  :Carregar alinhamento, diretrizes e métricas salvas;
+  :Continuar a partir do estado salvo;
+else ([Não])
+  :Iniciar nova sessão de alinhamento;
+endif
+repeat
+  if (Jogador escolheu reiniciar sessão?) then ([Sim])
+    :Limpar registros locais;
+    :Iniciar novo alinhamento;
+  else ([Não])
+    :Jogador conclui diretriz ou módulo;
+    :Salvar progresso localmente;
+  endif
+repeat while (Sessão em andamento?) is ([Sim]) not ([Não])
+stop
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US13 — Menu Principal, Instruções e Configurações
+start
+:Exibir menu principal;
+:Exibir guia de controles e catálogo de ameaças;
+repeat
+  :Aguardar tecla do jogador;
+  if (Tecla 1 ou N?) then ([Sim])
+    :Selecionar Modo Normal e destacar opção;
+  elseif (Tecla 2 ou D?) then ([Sim])
+    :Selecionar Modo Difícil e destacar opção;
+  else ([Não])
+  endif
+repeat while (ESPAÇO pressionado?) is ([Não]) not ([Sim])
+:Reinicializar jogador, chefe, projéteis, digitação e HUD;
+:Mudar estado de MENU para COMBATE;
+stop
+@enduml
