@@ -1,0 +1,37 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US12 — Barra de Alinhamento Ético e Comportamento da AURA-67
+start
+:Exibir barra de alinhamento (0%) e fase cognitiva atual;
+repeat
+  :Diretriz aplicada com sucesso;
+  :Avançar barra de alinhamento;
+  :Moderar comportamento e mensagens da AURA-67;
+  if (Alinhamento cruzou limite de fase?) then ([Sim])
+    :Avançar fase (Viés → Guardrails → AGI);
+    :Exibir aviso narrativo no console;
+  else ([Não])
+  endif
+repeat while (Alinhamento = 100%?) is ([Não]) not ([Sim])
+:AURA-67 em cooperação plena;
+stop
+@enduml

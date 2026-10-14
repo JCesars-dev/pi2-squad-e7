@@ -1,0 +1,42 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US11 — Inserção de Patches de Alinhamento no Núcleo
+start
+:Exibir diretriz constitucional no console central;
+repeat
+  :Ler caractere digitado;
+  if (Caractere igual ao esperado?) then ([Sim])
+    :Avançar cursor;
+  else ([Não])
+    :Registrar erro (US08);
+  endif
+repeat while (Oração concluída?) is ([Não]) not ([Sim])
+:Aplicar patch: reduzir 100 pontos do estado corrompido;
+:Aumentar alinhamento ético da AURA-67;
+:Exibir avaliação de precisão com feedback sonoro;
+if (Alinhamento chegou a 100%?) then ([Sim])
+  :Encerrar combate com vitória (US15);
+else ([Não])
+  :Carregar próxima diretriz;
+endif
+stop
+@enduml

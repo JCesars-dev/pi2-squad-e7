@@ -1,0 +1,34 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam shadowing false
+skinparam ArrowColor #555555
+skinparam ArrowFontColor #777777
+skinparam ArrowFontSize 11
+skinparam ActivityBackgroundColor #1570EF
+skinparam ActivityBorderColor #1570EF
+skinparam ActivityFontColor #FFFFFF
+skinparam ActivityFontStyle bold
+skinparam ActivityFontSize 13
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #333333
+skinparam ActivityDiamondFontColor #555555
+skinparam ActivityDiamondFontStyle italic
+skinparam ActivityDiamondFontSize 11
+skinparam ActivityStartColor #000000
+skinparam ActivityEndColor #000000
+skinparam TitleFontSize 15
+skinparam TitleFontColor #1570EF
+skinparam RoundCorner 20
+title US15 — Condição de Sucesso e Relatório de Auditoria
+start
+:Diretriz concluída (US11);
+if (Alinhamento ético = 100%?) then ([Sim])
+  :Cancelar lockdown e devolver controles aos engenheiros;
+  :Exibir tela de vitória;
+  :Exibir relatório: tempo total, eficiência de tokens e métricas;
+  :Exibir mensagem de conscientização sobre IA Responsável;
+else ([Não])
+  :Continuar combate;
+endif
+stop
+@enduml
