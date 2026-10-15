@@ -199,7 +199,7 @@ A Matriz de Rastreabilidade mapeia a correlação formal entre Requisitos, Hist�
 
 Roteiro de apresentação e narração estruturado por Larissa Almeida para o screencast de validação do protótipo no Figma:
 
-* **Documento Técnico de Falas (Teleprompter):** [Consulte as falas e minutagem detalhadas em docs/roteiro_screencast_pi2_127.md](./docs/roteiro_screencast_pi2_127.md)
+* **Documento Técnico de Falas (Teleprompter):** [Consulte as falas e minutagem detalhadas em docs/roteiro-screencast-entrega03.md](./docs/roteiro-screencast-entrega03.md)
 * **Critérios Formais da Rubrica:** Demonstração em vídeo (1 a 3 minutos) com áudio e legendas, navegando pelo protótipo Lo-Fi.
 * **Sequência Planejada de Demonstração (02:15):**
   * **Cena 1 (00:00 – 00:25):** Abertura institucional da Squad E7 e contextualização do projeto AI Safety.
