@@ -294,4 +294,81 @@ make run
 | | `[M]` | Retornar ao Menu Principal |
 | | `[ESC]` | Fechar e sair do jogo |
 
+---
+
+## 9. Entrega 03 (FDS) — Engenharia de Software em Ação
+
+Evidências da Entrega 03, referentes à Sprint 01 (sprint **Week 12e13 - Protótipo** no Board do Jira), organizadas pelos quatro critérios de avaliação.
+
+### 9.1. Versionamento
+
+Esta subseção registra como a Squad E7 versiona o projeto: onde o código fica, qual fluxo de trabalho seguimos, como ligamos cada commit ao card do Jira e a atividade do repositório durante a Sprint 01.
+
+#### Ambiente de versionamento
+
+* **Repositório:** [github.com/vdornelass/pi2-squad-e7](https://github.com/vdornelass/pi2-squad-e7), com Git e GitHub.
+* **Branch principal:** `main`, mantida estável e pronta para entrega.
+* **Integração contínua:** o GitHub Actions compila o projeto em C99 (`-Wall -Wextra -std=c99 -pedantic`) a cada push e a cada Pull Request para a `main` ([`.github/workflows/build.yml`](./.github/workflows/build.yml)).
+* **Templates:** modelo de Pull Request com vínculo ao card do Jira e checklist de qualidade, além de modelos de issue para bugs e novas funcionalidades ([`.github/`](./.github)).
+
+#### Fluxo de trabalho e convenções
+
+O fluxo completo está no [CONTRIBUTING.md](./CONTRIBUTING.md). Em resumo:
+
+1. **Uma branch por card do Jira**, a partir da `main` atualizada: `feature/PI2-XXX-nome-da-tarefa`.
+2. **Commits no padrão Conventional Commits**, com o card entre parênteses no final: `tipo(escopo): descricao (PI2-XXX)`. Tipos usados: `feat`, `fix`, `docs`, `style`, `refactor`, `test`.
+3. **Pull Request** para a `main`, preenchendo o template e com revisão de pelo menos um colega antes do merge.
+
+Exemplos:
+
+```text
+feat(pif): implementar modulo save.c (PI2-XXX)
+fix(bullet): corrigir colisao de projeteis (PI2-XXX)
+docs(fds): adicionar secao de versionamento no README (PI2-200)
+```
+
+**Regra da Sprint 01:** todo commit e todo Pull Request cita a chave do card correspondente.
+
+#### Rastreabilidade: história, card e commit
+
+A cadeia de rastreabilidade é **história de usuário → card no Jira → branch / commit / Pull Request**. A chave `PI2-XXX` é o elo entre o Board e o código. Exemplos reais do histórico do repositório:
+
+| Card | Commit |
+| :--- | :--- |
+| PI2-15 / PI2-58 (menu e motor do jogo) | [`57dd405`](https://github.com/vdornelass/pi2-squad-e7/commit/57dd405): `feat(pif): implementar menu interativo e motor do jogo em C` |
+| PI2-89 / PI2-90 (loop de combate e pontuação) | [`09eb5f7`](https://github.com/vdornelass/pi2-squad-e7/commit/09eb5f7): `feat(pif): consolidar pontuacao e loop de combate` |
+| PI2-127 (screencast de demonstração) | [`56ffb38`](https://github.com/vdornelass/pi2-squad-e7/commit/56ffb38): `feat(screencast): adicionar video demonstrativo completo` |
+
+#### Atividade do repositório
+
+Levantamento feito em 17/10/2026, a partir do histórico de commits (`git log`). A semana de 12/10 a 18/10 ainda está em andamento.
+
+| Semana | Período | Commits | Autores ativos |
+| :---: | :---: | :---: | :---: |
+| 36 | 31/08 – 06/09 | 9 | 1 |
+| 37 | 07/09 – 13/09 | 2 | 1 |
+| 38 | 14/09 – 20/09 | 5 | 3 |
+| 39 | 21/09 – 27/09 | 19 | 3 |
+| 40 | 28/09 – 04/10 | 2 | 1 |
+| 41 | 05/10 – 11/10 | 2 | 1 |
+| 42 | 12/10 – 18/10 | 10 | 2 |
+
+Para refazer o levantamento:
+
+```bash
+git log --all --date=format:'%G-W%V' --pretty='%ad' | sort | uniq -c
+```
+
+### 9.2. Implementação (Sprint 01)
+
+_A preencher pela equipe._
+
+### 9.3. Qualidade e testes
+
+_A preencher pela equipe._
+
+### 9.4. Colaboração e evidências
+
+_A preencher pela equipe._
+
 
