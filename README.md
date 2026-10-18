@@ -195,25 +195,20 @@ A Matriz de Rastreabilidade mapeia a correlação formal entre Requisitos, Hist�
 | **US15** | [PI2-81](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-81) | [AD-US15](./docs/diagramas_atividade/HU15_Condicao_de_Sucesso_e_Relatorio.png) | Tela de Vitória | [`src/main.c`](./src/main.c), [`src/ui.c`](./src/ui.c) |
 ---
 
-### 6.4. Demonstração (Roteiro e Planejamento de Screencast — PI2-127)
+### 6.4. Demonstração (Roteiro e Screencast — PI2-127)
 
-Roteiro de apresentação e narração estruturado por Larissa Almeida para o screencast de validação do protótipo no Figma:
+Roteiro de apresentação e narração estruturado por Larissa Almeida para o screencast de demonstração do MVP 1 do AI Safety, jogo em C99 + Raylib 5.0:
 
 * **Documento Técnico de Falas (Teleprompter):** [Consulte as falas e minutagem detalhadas em docs/roteiro-screencast-entrega03.md](./docs/roteiro-screencast-entrega03.md)
-* **Critérios Formais da Rubrica:** Demonstração em vídeo (1 a 3 minutos) com áudio e legendas, navegando pelo protótipo Lo-Fi.
-* **Sequência Planejada de Demonstração (02:15):**
-  * **Cena 1 (00:00 – 00:25):** Abertura institucional da Squad E7 e contextualização do projeto AI Safety.
-  * **Cena 2 (00:25 – 00:55):** **US01** — Movimentação e esquiva do operador na arena retangular a 60 FPS (WASD).
-  * **Cena 3 (00:55 – 01:30):** **US02** — Telemetria do HUD (5 vidas, barra de alinhamento 0% a 100% e console neural `>_`).
-  * **Cena 4 (01:30 – 02:00):** **US03** — Transição comportamental da AURA-67 nas 3 fases cognitivas (Viés, Jailbreak e Convergência).
-  * **Cena 5 (02:00 – 02:15):** Encerramento e correspondência com a Matriz de Rastreabilidade.
-* **Vídeo da Demonstração (Áudio e Legendas Integradas):**
-  * Arquivo de Vídeo MP4 (1080p Full HD): [`docs/screencast_demonstracao_lofi.mp4`](./docs/screencast_demonstracao_lofi.mp4)
-  * Faixa de Legenda SubRip (SRT): [`docs/legendas_screencast_pi2_127.srt`](./docs/legendas_screencast_pi2_127.srt)
-  * Faixa de Legenda WebVTT (VTT): [`docs/legendas_screencast_pi2_127.vtt`](./docs/legendas_screencast_pi2_127.vtt)
-
-![Preview do Screencast com Legendas Embutidas](./docs/img/screenshot_screencast_legendado.png)
-
+* **Critérios Formais da Rubrica:** Demonstração em vídeo (1 a 3 minutos) com áudio e legendas.
+* **Sequência da Demonstração (02:45):**
+  * **Cena 1 (00:00 – 00:35):** Abertura e build — C99 + Raylib 5.0, Makefile e compilação sem warnings.
+  * **Cena 2 (00:35 – 00:55):** **US13** — Menu principal, modos Normal e Difícil e controles.
+  * **Cena 3 (00:55 – 01:30):** **US01** e **US02** — Movimentação, esquiva e HUD de combate.
+  * **Cena 4 (01:30 – 02:15):** **US05, US06, US07, US08, US11 e US12** — Motor de digitação.
+  * **Cena 5 (02:15 – 02:45):** **US03, US04 e US15** — Fases cognitivas da AURA-67 e vitória.
+* **Histórias não demonstradas no vídeo:** US09, US10 e US14.
+* **Vídeo da Demonstração (Áudio e Legendas Integradas):** [`docs/screencast_demonstracao_lofi.mp4`](./docs/screencast_demonstracao_lofi.mp4)
 ---
 
 ## 7. Estrutura do Repositório
