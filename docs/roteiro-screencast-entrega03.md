@@ -5,8 +5,8 @@
 #### Projeto: AI Safety — Alinhamento do Modelo AURA-67 (Squad E7 — CESAR School)
 
 - **Ticket no Jira:** [PI2-211](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-211) (screencast das novas histórias no README) e [PI2-204](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-204) (screencast dos testes, anexado aos cards)
-- **Responsável e Apresentadora:** Larissa Vitória Silva de Almeida (Lead de Engenharia de Software)
-- **Artefato Demonstrado:** Vídeo de demonstração do MVP 1 já gravado: jogo AI Safety rodando em C99 + Raylib 5.0, build via Makefile
+- **Responsável pelo Roteiro:** Larissa Vitória Silva de Almeida (Lead de Engenharia de Software)
+- **Artefato Demonstrado:** Vídeo de demonstração do MVP 1 já gravado: jogo AI Safety rodando em C99 + Raylib 5.0, build via Makefile. A narração e as legendas já estão embutidas no vídeo e são transcritas na seção 2
 - **Escopo das Histórias Cobertas:** US01 a US15 (US09, US10 e US14 não aparecem no vídeo)
 - **Duração Total Estimada:** 02 minutos e 45 segundos, a duração do vídeo já gravado. Fica na faixa de 1 a 3 minutos usada na Entrega 02.
 
@@ -44,25 +44,37 @@ O vídeo já gravado tem 2 minutos e 45 segundos, dividido em 5 blocos que o pai
 | US14: Persistência de progresso (Save/Load) | — | Não | Tarefas pendentes (subtarefa em andamento) |
 | US15: Condição de sucesso e relatório | 5 | Parcial: aparece a vitória e a pontuação, mas não o relatório de tempo e eficiência | Tarefas pendentes |
 
-### 2. Roteiro de Falas para Narração (Teleprompter)
+### 2. Falas da Narração do Vídeo (Transcrição das Legendas)
+
+As falas abaixo são a transcrição das legendas embutidas no vídeo, com o horário em que cada frase aparece. Os horários foram lidos do vídeo a cada meio segundo, então podem variar alguns instantes.
 
 #### Cena 1: Abertura e Build (00:00 – 00:35)
 
 - **Ação na Tela:** `00:00` slide de abertura "AURA-67 AI Safety". `00:05` Makefile no editor, com as flags `-Wall -Wextra -std=c99 -pedantic`. `00:15` terminal executando o jogo. `00:30` slide "Build validada: C99 + Raylib 5.0", com `make && make windows` e a execução por `./bin/jogo` ou `jogar.bat`.
 - **Falas da Narração:**
 
-  > "Olá a todos. Sou Larissa Almeida, Lead de Engenharia de Software da Squad E7, e este é o screencast da Entrega 03 de Fundamentos de Desenvolvimento de Software. Apresentamos o AI Safety, nosso jogo em C99 puro com Raylib 5.0.
+  > `00:00` "Olá. Somos o squad sete e esse é o nosso jogo AI Safety."
   >
-  > O projeto compila via Makefile com as flags Wall, Wextra, std c99 e pedantic, roda no terminal e a build foi concluída sem warnings."
+  > `00:09` "O AI Safety está sendo programado em C99 puro, utilizando a Raylib a cento e sessenta frames por segundo."
+  >
+  > `00:17` "Essa é uma demonstração do jogo rodando em terminal."
+  >
+  > Sem narração de `00:20` a `00:35`: o jogo executa no terminal e o slide da build aparece.
 
 #### Cena 2: US13 — Menu Principal, Instruções e Configurações (00:35 – 00:55)
 
 - **Ação na Tela:** `00:35` menu "Terminal de Alinhamento: AURA-67", com o quadro "Missão: reprogramar AURA-67 antes do colapso cognitivo". `00:40` modos de operação: Normal (supervisão) e AGI sem limites. `00:50` quadro de controles: `1/M` para Normal e `2/D` para Difícil.
 - **Falas da Narração:**
 
-  > "Na US13, o menu nos coloca na pele de um engenheiro de IA, com a missão de reprogramar a AURA-67 antes do colapso cognitivo.
+  > `00:37` "No AI Safety entramos na pele de um engenheiro de IA"
   >
-  > O jogador escolhe o modo Normal ou o Difícil, confere os controles e as ameaças e inicia com a tecla Espaço."
+  > `00:40` "e temos a missão de reprogramar a IA hostil AURA-67,"
+  >
+  > `00:44` "inserindo comandos éticos"
+  >
+  > `00:46` "antes que ela entre em colapso cognitivo."
+  >
+  > `00:49` "E esse é o menu inicial do jogo."
 
 #### Cena 3: US01 e US02 — Esquiva, Combate e HUD (00:55 – 01:30)
 
@@ -72,41 +84,57 @@ O vídeo já gravado tem 2 minutos e 45 segundos, dividido em 5 blocos que o pai
   3. Pontuação e percentual de ética no canto inferior direito.
 - **Falas da Narração:**
 
-  > "Ao iniciar a partida, assumimos o controle do engenheiro. Na US01, o quadrado ciano se move com WASD ou setas, dentro dos limites da arena, e desvia dos projéteis da AURA-67, o quadrado vermelho no topo.
+  > `00:56` "Ao iniciar a partida, assumimos o controle do engenheiro de IA,"
   >
-  > Na US02, o HUD mostra a barra da AURA-67 com a fase ativa, as cinco vidas, a pontuação e o percentual de ética, que sobe a cada diretriz concluída."
+  > `01:00` "representado pelo quadrado azul"
+  >
+  > `01:02` "e temos que desviar dos projéteis hostis da IA"
+  >
+  > `01:04` "corrompida, representada pelo quadrado vermelho."
+  >
+  > `01:09` "Precisamos evitar tomar dano para vencer"
+  >
+  > `01:12` "e conseguir salvar a IA AURA-67."
+  >
+  > Sem narração de `01:15` a `01:30`: o jogador desvia dos projéteis e a ética sobe no HUD.
 
 #### Cena 4: US05, US06, US07, US08, US11 e US12 — Motor de Digitação (01:30 – 02:15)
 
 - **Ação na Tela:** `01:30` caixa de comando `>_` na base da tela, com a diretriz ativa, os caracteres corretos em verde, o cursor em amarelo e o contador "Diretriz de alinhamento n/10". `01:40` rótulo "Alinhamento estável! (+100)". `01:50` rótulo "Patch aplicado! (+50)" e caixa de digitação em vermelho. `02:00` a `02:15` novas diretrizes sendo digitadas enquanto o engenheiro desvia.
 - **Falas da Narração:**
 
-  > "A US05 traz o terminal de diretrizes na base da tela: a frase ativa, os caracteres corretos em verde, o cursor em amarelo e o contador de diretrizes, de 1 a 10.
+  > `01:32` "Cada diretriz ética digitada no campo inferior da tela reprograma"
   >
-  > Na US06, a digitação é validada em tempo real e as teclas de movimento não geram erro, então o jogador digita e desvia ao mesmo tempo.
+  > `01:36` "os pesos neurais da IA: sobe a barra de alinhamento de 0"
   >
-  > Na US07, cada diretriz concluída recebe uma avaliação, como Alinhamento Estável ou Patch Aplicado. Esse é o patch da US11, que reprograma a AURA-67 e faz a barra de alinhamento da US12 subir. Na US08, um erro de digitação faz a caixa piscar em vermelho."
+  > `01:39` "a 100% e causa dano à IA hostil."
+  >
+  > Sem narração de `01:42` a `02:15`: o jogador continua digitando as diretrizes e desviando, com os rótulos "Alinhamento estável!" e "Patch aplicado!" na tela.
 
 #### Cena 5: US03, US04 e US15 — Fases Cognitivas e Vitória (02:15 – 02:45)
 
 - **Ação na Tela:** `02:15` painel lateral "Fase 1 → Fase 2 → Fase 3" e barra superior da AURA-67 mudando de fase. `02:25` Fase 3, com o círculo de área na arena. `02:35` laser vertical na lateral esquerda. `02:40` tela "AURA-67 alinhada com sucesso!" com a "Pontuação constitucional: 800 pontos".
 - **Falas da Narração:**
 
-  > "Na US03, a AURA-67 avança por três fases cognitivas: na primeira, os primeiros ataques; na segunda, padrões de projéteis mais intensos, incluindo os projéteis coloridos de status da US04; na terceira, lasers e evasão de alto risco.
+  > `02:18` "A gameplay do jogo é frenética e viciante,"
   >
-  > Ao completar as dez diretrizes, o alinhamento chega a cem por cento e a US15 exibe a tela de vitória, com a pontuação constitucional da sessão."
+  > `02:21` "e o jogador precisa de muita destreza nos movimentos e habilidade"
+  >
+  > `02:24` "no teclado se quiser vencer esse desafio."
+  >
+  > `02:35` "Ao conseguir a vitória,"
+  >
+  > `02:36` "a IA é completamente restaurada e é exibida na tela"
+  >
+  > `02:39` "o relatório final da pontuação obtida na gameplay."
 
 ### 3. Diretrizes Técnicas para a Gravação do Vídeo
 
-1. **Ritmo de Leitura:**
-   - Falar de forma clara e cadenciada, sem pressa. As falas foram dimensionadas para 130 a 140 palavras por minuto, cena a cena, para caber em cada bloco do vídeo.
-2. **Sincronia com o Vídeo:**
-   - O vídeo já tem narração e legendas automáticas. Se for regravar o áudio, usar as falas acima, cronometradas para os mesmos 5 blocos do painel lateral (Bloco 01 a 05), que marcam onde cada cena começa.
-3. **Qualidade do Áudio:**
-   - Gravar em ambiente silencioso, com microfone próximo e sem ruídos de fundo ou eco.
-4. **Legendas (Requisito FDS):**
-   - A rubrica pede áudio e/ou legendas. Usar o texto das falas acima como base para as legendas (YouTube, Clipchamp ou CapCut).
-5. **Resolução de Tela:**
-   - O vídeo enviado está em 1024×576. Exportar ou regravar em 1080p (Full HD, 16:9) para os textos do jogo e do terminal ficarem legíveis.
-6. **Onde Anexar:**
+1. **Narração e Legendas (Requisito FDS):**
+   - O vídeo já tem narração e legendas embutidas, que atendem ao "áudio e/ou legendas" da rubrica. A seção 2 é a transcrição delas.
+2. **Trechos sem Narração:**
+   - `00:20` a `00:37`, `01:15` a `01:32`, `01:42` a `02:18` e `02:27` a `02:35`. Nesses trechos o vídeo mostra só a tela, sem fala nem legenda.
+3. **Resolução de Tela:**
+   - O vídeo está em 1024×576. Se for exportar ou regravar de novo, usar 1080p (Full HD, 16:9) para os textos do jogo e do terminal ficarem legíveis.
+4. **Onde Anexar:**
    - Anexar o screencast aos cards das histórias no Jira (PI2-204 e PI2-205) e publicar o link ou o vídeo no README (PI2-211).
