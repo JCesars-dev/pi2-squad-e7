@@ -166,7 +166,8 @@ void ui_draw_typing_box(const TypingEngine *te) {
 
     /* Progress Label */
     char prog_str[64];
-    snprintf(prog_str, sizeof(prog_str), "DIRETRIZ DE ALINHAMENTO %d/%d", te->phrase_index + 1, te->phrase_count);
+    int visible_index = te->phrase_index < te->phrase_count ? te->phrase_index + 1 : te->phrase_count;
+    snprintf(prog_str, sizeof(prog_str), "DIRETRIZ DE ALINHAMENTO %d/%d", visible_index, te->phrase_count);
     int pw = MeasureText(prog_str, 16);
     DrawText(prog_str, SCREEN_WIDTH / 2 - pw / 2, box_y - 20, 16, (Color){ 160, 175, 210, 255 });
 
