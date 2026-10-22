@@ -341,8 +341,6 @@ A cadeia de rastreabilidade é **história de usuário → card no Jira → bran
 
 #### Atividade do repositório
 
-Levantamento feito em 22/10/2026, a partir do histórico de commits (`git log`). A semana de 19/10 a 25/10 ainda está em andamento.
-
 | Semana | Período | Commits | Autores ativos |
 | :---: | :---: | :---: | :---: |
 | 36 | 31/08 – 06/09 | 9 | 1 |
@@ -352,7 +350,7 @@ Levantamento feito em 22/10/2026, a partir do histórico de commits (`git log`).
 | 40 | 28/09 – 04/10 | 2 | 1 |
 | 41 | 05/10 – 11/10 | 2 | 1 |
 | 42 | 12/10 – 18/10 | 13 | 2 |
-| 43 | 19/10 – 25/10 | 7 | 3 |
+| 43 | 19/10 – 25/10 | 14 | 6 |
 
 Para refazer o levantamento:
 
@@ -362,7 +360,46 @@ git log --all --date=format:'%G-W%V' --pretty='%ad' | sort | uniq -c
 
 ### 9.2. Implementação (Sprint 01)
 
-_A preencher pela equipe._
+Esta subseção consolida o cumprimento do **Item 1: Implementação** da Entrega 03 de FDS, demonstrando a entrega de software funcionando a partir de requisitos formais, rastreabilidade completa no Jira e validação por testes de sistema.
+
+#### 9.2.1. Histórias de Usuário Implementadas (Mínimo de 5 Exigido)
+
+A Squad E7 selecionou e validou **7 Histórias de Usuário** no ciclo de entrega, superando o mínimo de 5 exigido pela rubrica. Todas as histórias possuem cards detalhados no Jira no padrão 3Cs, código integrado no motor em C99 e cobertura pelos 27 casos de teste de sistema documentados na seção 9.3:
+
+| US | Card no Jira | Descrição Funcional Implementada | Módulo em C | Validação e Testes |
+| :---: | :---: | :--- | :--- | :---: |
+| **US01** | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | Movimentação e esquiva fluida do jogador no console de combate | `src/player.c` | 4 CTs (100% OK) |
+| **US02** | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | HUD retrô: integridade do jogador, barra do chefe e alinhamento | `src/ui.c` | 4 CTs (100% OK) |
+| **US03** | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | Fases cognitivas da AURA-67 e padrões de ataque dinâmicos | `src/boss.c` | 4 CTs (100% OK) |
+| **US05** | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | Terminal interativo para inserção de diretrizes éticas | `src/terminal.c` | 4 CTs (100% OK) |
+| **US06** | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | Validação de digitação em tempo real e detecção de erros | `src/terminal.c` | 4 CTs (Issues #1 e #2) |
+| **US07** | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | Avaliação de precisão de alinhamento e compilação de patches | `src/patch.c` | 5 CTs (100% OK) |
+| **US13** | [PI2-79](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-79) | Menu principal com instruções, configurações e fluxo de entrada | `src/menu.c` | 2 CTs (100% OK) |
+
+*Módulos adicionais em desenvolvimento ativo no ciclo atual (U2):*
+
+* **US14** ([PI2-80](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-80)): Persistência binária local (`src/save.c` / `save.bin` com 5.0 Story Points).
+* **US11** ([PI2-77](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-77)): Inserção de patches de alinhamento no núcleo da IA (8.0 Story Points).
+
+---
+
+#### 9.2.2. Gestão da Sprint no Board (Jira Software)
+
+* **Link Oficial do Board:** [Acessar Board do Projeto PI2 - Squad E7](https://csprj-adsr-2p-e7.atlassian.net/jira/software/c/projects/PI2/boards/2)
+* **Equivalência de Nomenclatura:** A "Sprint 01" avaliada na Entrega 03 de FDS corresponde ao ciclo de desenvolvimento da Unidade 2, ativo no Board do Jira como **Week 12 - Protótipo** (Sprint ID 82, período 19/10/2026 a 24/10/2026).
+* **Meta da Sprint (*Sprint Goal*):** *"PIF: protótipo jogável integrado C + Haskell, patches de alinhamento e playtesting + Entrega 03 FDS: testes de sistema, screencasts, rastreabilidade e pareamento."*
+* **Status das Colunas:** O Board reflete rigorosamente a realidade do repositório:
+  * **Concluído (Done):** Histórias finalizadas, casos de testes de sistema elaborados e executados, convenção de versionamento e definição de duplas.
+  * **Em andamento (In Progress):** Playtesting do protótipo e evidências finais.
+  * **Tarefas pendentes (To Do):** Histórias planejadas para os ciclos subsequentes.
+
+---
+
+#### 9.2.3. Evidência Visual do Board Atualizado
+
+Captura em alta resolução realizada diretamente do Jira Software, exibindo todas as colunas (*To Do*, *In Progress* e *Done*) e as swimlanes de PIF e FDS:
+
+![Visão Completa do Board no Jira](./docs/img/print_board_sprint2_completo.png)
 
 ### 9.3. Qualidade e testes
 
@@ -376,8 +413,114 @@ Os testes de sistema da Sprint 01 estão em [`docs/casos_de_teste_sprint01.md`](
   * O jogo não emite som (CT-US06-01 e CT-US07-05): [#3](https://github.com/vdornelass/pi2-squad-e7/issues/3).
 
 
-
 ### 9.4. Colaboração e evidências
+
+Nesta seção, registramos a colaboração entre os integrantes durante a Sprint 02 (U2), identificando as histórias de usuário, os cards do Jira e os módulos trabalhados por cada dupla. Também descrevemos a experiência com a programação em pares (*Pair Programming*), destacando a divisão de responsabilidades, os desafios encontrados e os aprendizados obtidos.
+
+#### Sprint 02 (U2) — Programação em Pares (*Pair Programming*)
+
+##### 1. Dupla: Matheus Chaves e Caio Brayner
+
+**Área:** Persistência Binária e Arquitetura de Estado em C.
+
+**Histórias e módulos implementados:**
+
+- **PI2-80 (US14):** Implementação da persistência de dados por meio de arquivos binários (`save.bin`), permitindo salvar e carregar o progresso do jogo.
+- **PI2-175:** Desenvolvimento do módulo `save.c/h`, responsável pelas operações de salvamento e carregamento.
+- **PI2-178:** Refatoração dos módulos `game_state.c/h` para melhorar a organização e a sincronização do estado do jogo.
+- **PI2-179:** Integração do fluxo completo de execução, incluindo as funcionalidades de menu, salvamento e carregamento.
+
+**Experiência com a programação em pares:**
+
+Durante o desenvolvimento, alternamos os papéis de *Driver* e *Navigator* para que ambos participassem da implementação e da revisão do código. Na primeira sessão, Matheus ficou responsável pela serialização binária, enquanto Caio acompanhou a implementação e verificou a sincronização dos dados do `GameState`. Na segunda sessão, Caio assumiu a implementação das refatorações e a correção de *warnings*, enquanto Matheus auxiliou na revisão e nos testes das funcionalidades de menu e salvamento.
+
+Um dos principais desafios foi garantir que os dados fossem gravados e recuperados corretamente, sem comprometer o estado do jogo. A revisão conjunta ajudou a identificar possíveis inconsistências e a compreender melhor a integração entre os módulos.
+
+Como aprendizado, percebemos que a programação em pares facilita a identificação de erros, melhora a comunicação e contribui para a organização do código. A alternância de papéis também permitiu que os dois integrantes compreendessem melhor as diferentes partes da implementação.
+
+##### 2. Dupla: Julio Cesar e João Gabriel
+
+**Área:** Patches de Alinhamento e Pipeline Funcional Haskell.
+
+**Histórias e módulos implementados:**
+
+- **PI2-77 (US11):** Implementação de patches de alinhamento no núcleo do sistema, seguindo as regras definidas para o funcionamento da aplicação.
+- **PI2-180:** Desenvolvimento do console central para apoiar a interação e a integração das funcionalidades.
+- **PI2-177:** Implementação do módulo `Ranking.hs`, responsável pela lógica relacionada ao ranking.
+- **PI2-181:** Integração do pipeline de comunicação entre os módulos desenvolvidos em C e Haskell.
+
+**Experiência com a programação em pares:**
+
+Organizamos o trabalho em duas sessões, alternando as responsabilidades conforme as necessidades de cada etapa. Na primeira sessão, Julio ficou responsável pela lógica dos patches e pelas regras de funcionamento, enquanto João acompanhou o desenvolvimento e verificou a formatação dos dados exportados. Na segunda sessão, João assumiu a implementação do módulo Haskell, enquanto Julio auxiliou na verificação dos tipos e na validação dos resultados.
+
+O principal desafio foi garantir a comunicação correta entre os componentes desenvolvidos em linguagens diferentes. Precisamos observar a estrutura dos dados compartilhados, os tipos utilizados e o formato esperado por cada parte do sistema. A revisão conjunta ajudou a identificar possíveis incompatibilidades antes da integração completa.
+
+A experiência mostrou a importância de definir interfaces claras entre os módulos e validar os dados durante a comunicação entre linguagens. Também percebemos que a colaboração permite discutir diferentes soluções e reduzir erros que poderiam passar despercebidos durante uma implementação individual.
+
+##### 3. Dupla: Larissa Almeida e Theo Monteiro
+
+**Área:** Engenharia de Qualidade, Testes de Sistema e Rastreabilidade.
+
+**Histórias e atividades implementadas:**
+
+- **PI2-194:** Organização das atividades de qualidade e definição da estratégia de testes do sistema.
+- **PI2-202:** Elaboração e documentação de 27 casos de teste de sistema.
+- **PI2-203:** Execução dos testes para verificar o comportamento das funcionalidades implementadas.
+- **PI2-204/205:** Produção de *screencasts* para registrar a execução e demonstrar as funcionalidades testadas.
+- **PI2-206:** Organização do registro de bugs por meio de um *Issue Tracker*, permitindo documentar os problemas identificados durante os testes.
+
+**Experiência com a programação em pares:**
+
+Nosso trabalho foi concentrado na qualidade do sistema, na elaboração dos cenários de teste e na produção de evidências que demonstrassem o funcionamento das funcionalidades. Durante as sessões, Larissa ficou responsável pela elaboração e formatação dos casos de teste, enquanto Theo atuou como *Navigator*, revisando os cenários, verificando os critérios de aceitação e organizando o registro dos problemas encontrados.
+
+Ao longo do trabalho, discutimos como transformar os requisitos em situações práticas de teste, considerando tanto os comportamentos esperados quanto possíveis falhas. Um dos desafios foi garantir que os casos de teste fossem claros, objetivos e rastreáveis aos requisitos, além de registrar os resultados de maneira organizada.
+
+A produção dos *screencasts* e a catalogação dos bugs também exigiram atenção para que as evidências fossem compreensíveis e úteis para a equipe. A revisão conjunta ajudou a melhorar a descrição dos cenários e a tornar os registros mais consistentes.
+
+Como aprendizado, entendemos que qualidade de software não significa apenas verificar se o programa funciona, mas também documentar os resultados, identificar falhas e fornecer evidências que permitam reproduzir os problemas. A colaboração contribuiu para uma análise mais cuidadosa e para a divisão das responsabilidades.
+
+##### 4. Facilitação Ágil — Mateus Lacerda
+
+**Responsabilidades:**
+
+- Coordenação do cronograma da Sprint 02.
+- Acompanhamento e atualização do Jira Board.
+- Organização das atividades e acompanhamento dos cards das duplas.
+- Verificação da documentação e das evidências registradas no README.
+
+**Relato de colaboração:**
+
+A facilitação ágil teve como objetivo manter as atividades organizadas e facilitar o acompanhamento do progresso das duplas. O Jira Board foi utilizado para visualizar as tarefas, acompanhar os cards e verificar as entregas previstas. A organização das evidências no README também contribuiu para documentar o trabalho realizado durante a sprint.
+
+Essa experiência reforçou a importância da comunicação entre os integrantes, do acompanhamento contínuo das tarefas e da transparência na documentação. A facilitação ajudou a manter uma visão geral das atividades e a relacionar as implementações às entregas esperadas.
+
+##### 5. Rastreabilidade das atividades da Sprint 02
+
+Para manter a rastreabilidade entre as atividades planejadas e o trabalho desenvolvido, utilizamos os cards do Jira como referência para identificar as histórias de usuário, os módulos e as responsabilidades de cada dupla.
+
+| Dupla / Responsáveis | Cards do Jira | Área de atuação |
+| :--- | :--- | :--- |
+| Matheus Chaves e Caio Brayner | PI2-80, PI2-175, PI2-178, PI2-179 | Persistência binária e estado do jogo |
+| Julio Cesar e João Gabriel | PI2-77, PI2-177, PI2-180, PI2-181 | Patches de alinhamento e integração C/Haskell |
+| Larissa Almeida e Theo Monteiro | PI2-194, PI2-202, PI2-203, PI2-204, PI2-205, PI2-206 | Qualidade, testes e evidências |
+| Mateus Lacerda | Facilitação transversal | Coordenação e acompanhamento da sprint |
+
+A rastreabilidade completa deve relacionar cada história de usuário ao card correspondente e às evidências disponíveis no repositório, incluindo branches, commits e Pull Requests.
+
+**Padrão de versionamento adotado:**
+
+- Uma branch por card, criada a partir da `main` atualizada, seguindo o padrão `feature/PI2-XXX-nome-da-tarefa`.
+- Commits no padrão Conventional Commits, incluindo a chave do card ao final da mensagem, como `feat(pif): implementar modulo save.c (PI2-175)`.
+- Pull Requests direcionados à `main`, preenchidos com o template do projeto e revisados por pelo menos um colega antes do *merge*.
+- Referência à chave do card correspondente nos commits e Pull Requests, facilitando a ligação entre o Jira e o GitHub.
+
+Os registros de branches, commits e Pull Requests devem ser preenchidos com os identificadores reais do histórico do GitHub. A descrição das atividades, isoladamente, não comprova a autoria de cada alteração.
+
+##### 6. Conclusão da Sprint 02
+
+A experiência de programação em pares permitiu dividir responsabilidades, revisar decisões técnicas e compartilhar conhecimentos entre os integrantes. A alternância dos papéis de *Driver* e *Navigator* favoreceu a participação conjunta e ajudou a identificar problemas durante o desenvolvimento.
+
+Além da implementação das funcionalidades, a sprint destacou a importância dos testes, da integração entre módulos, da rastreabilidade das tarefas e da documentação das evidências. Concluímos que o trabalho colaborativo contribui para melhorar a qualidade do software e torna o processo de desenvolvimento mais organizado e transparente.
 
 _A preencher pela equipe._
 
