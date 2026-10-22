@@ -3,6 +3,13 @@
 #include <math.h>
 #include <stdbool.h>
 
+/* Compatibilidade com as APIs da raylib 5.0 e 5.5+/6.x. */
+#if RAYLIB_VERSION_MAJOR > 5 || (RAYLIB_VERSION_MAJOR == 5 && RAYLIB_VERSION_MINOR >= 5)
+    #define PATCH_SOUND_IS_VALID IsSoundValid
+#else
+    #define PATCH_SOUND_IS_VALID PATCH_SOUND_IS_VALID
+#endif
+
 #define SAMPLE_RATE 22050
 #define FRAME_COUNT 4410
 
@@ -39,18 +46,18 @@ void patch_feedback_init(void) {
 
 void patch_feedback_play_grade(int grade) {
     if (audio_ready && grade >= 0 && grade < 3 &&
-        IsSoundReady(grade_sounds[grade])) PlaySound(grade_sounds[grade]);
+        PATCH_SOUND_IS_VALID(grade_sounds[grade])) PlaySound(grade_sounds[grade]);
 }
 
 void patch_feedback_play_error(void) {
-    if (audio_ready && IsSoundReady(error_sound)) PlaySound(error_sound);
+    if (audio_ready && PATCH_SOUND_IS_VALID(error_sound)) PlaySound(error_sound);
 }
 
 void patch_feedback_shutdown(void) {
     if (!audio_ready) return;
     for (int i = 0; i < 3; i++)
-        if (IsSoundReady(grade_sounds[i])) UnloadSound(grade_sounds[i]);
-    if (IsSoundReady(error_sound)) UnloadSound(error_sound);
+        if (PATCH_SOUND_IS_VALID(grade_sounds[i])) UnloadSound(grade_sounds[i]);
+    if (PATCH_SOUND_IS_VALID(error_sound)) UnloadSound(error_sound);
     CloseAudioDevice();
     audio_ready = false;
 }
