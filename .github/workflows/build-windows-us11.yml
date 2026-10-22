@@ -48,7 +48,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p dist/AURA-67-Windows
-          gcc -Wall -Wextra -std=c99 -pedantic -Iinclude -Isrc \
+          # Use os headers da raylib instalada via MSYS2 (6.x), nao os vendorizados (5.0).
+          gcc -Wall -Wextra -std=c99 -pedantic -Isrc -I/ucrt64/include \
               src/main.c src/player.c src/boss.c src/bullet.c \
               src/typing_engine.c src/ui.c src/save.c src/game_state.c \
               src/ranking.c src/patch_feedback.c \
