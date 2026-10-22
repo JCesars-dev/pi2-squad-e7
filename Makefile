@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -pedantic -Iinclude -Isrc
 TARGET = bin/jogo
-SRCS = src/main.c src/player.c src/boss.c src/bullet.c src/typing_engine.c src/ui.c
+SRCS = src/main.c src/player.c src/boss.c src/bullet.c src/typing_engine.c src/ui.c src/save.c src/patch_feedback.c
 
 # Detecção de Sistema Operacional
 UNAME_S := $(shell uname -s 2>/dev/null || echo Windows)
@@ -20,6 +20,11 @@ $(TARGET): $(SRCS)
 	$(CC) $(CFLAGS) $(SRCS) $(LDFLAGS) -o $(TARGET)
 	@echo "Compilacao do AI Safety em C (Raylib) concluida com sucesso!"
 
+test:
+	@mkdir -p bin
+	$(CC) $(CFLAGS) tests/test_typing_engine.c src/typing_engine.c -o bin/test_typing_engine
+	./bin/test_typing_engine
+
 run: all
 ifeq ($(UNAME_S), Linux)
 	LD_LIBRARY_PATH=lib:$$LD_LIBRARY_PATH ./$(TARGET)
@@ -31,4 +36,4 @@ clean:
 	rm -f bin/jogo bin/*.o bin/*.exe
 	@echo "Limpeza concluida."
 
-.PHONY: all run clean
+.PHONY: all run clean test
