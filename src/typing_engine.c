@@ -69,11 +69,9 @@ bool typing_engine_is_finished(const TypingEngine *te) {
 const char *typing_engine_handle_key(TypingEngine *te, int key, int *errors_out) {
     if (typing_engine_is_finished(te)) return NULL;
 
-    /* Ignora teclas de movimentacao (WASD e setas) para permitir esquiva sem erro */
-    if (key == KEY_W || key == KEY_A || key == KEY_S || key == KEY_D ||
-        key == KEY_UP || key == KEY_DOWN || key == KEY_LEFT || key == KEY_RIGHT) {
-        return NULL;
-    }
+    /* GetCharPressed fornece caracteres imprimiveis, inclusive W/A/S/D
+       validos nas diretrizes. Setas nao geram caracteres neste fluxo. */
+    if (key < 32 || key > 126) return NULL;
 
     const char *target = typing_engine_get_current_phrase(te);
     if (!target || target[0] == '\0') return NULL;
