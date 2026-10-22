@@ -362,7 +362,46 @@ git log --all --date=format:'%G-W%V' --pretty='%ad' | sort | uniq -c
 
 ### 9.2. Implementação (Sprint 01)
 
-_A preencher pela equipe._
+Esta subseção consolida o cumprimento do **Item 1: Implementação** da Entrega 03 de FDS, demonstrando a entrega de software funcionando a partir de requisitos formais, rastreabilidade completa no Jira e validação por testes de sistema.
+
+#### 9.2.1. Histórias de Usuário Implementadas (Mínimo de 5 Exigido)
+
+A Squad E7 selecionou e validou **7 Histórias de Usuário** no ciclo de entrega, superando o mínimo de 5 exigido pela rubrica. Todas as histórias possuem cards detalhados no Jira no padrão 3Cs, código integrado no motor em C99 e cobertura pelos 27 casos de teste de sistema documentados na seção 9.3:
+
+| US | Card no Jira | Descrição Funcional Implementada | Módulo em C | Validação e Testes |
+| :---: | :---: | :--- | :--- | :---: |
+| **US01** | [PI2-67](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-67) | Movimentação e esquiva fluida do jogador no console de combate | `src/player.c` | 4 CTs (100% OK) |
+| **US02** | [PI2-68](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-68) | HUD retrô: integridade do jogador, barra do chefe e alinhamento | `src/ui.c` | 4 CTs (100% OK) |
+| **US03** | [PI2-69](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-69) | Fases cognitivas da AURA-67 e padrões de ataque dinâmicos | `src/boss.c` | 4 CTs (100% OK) |
+| **US05** | [PI2-71](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-71) | Terminal interativo para inserção de diretrizes éticas | `src/terminal.c` | 4 CTs (100% OK) |
+| **US06** | [PI2-72](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-72) | Validação de digitação em tempo real e detecção de erros | `src/terminal.c` | 4 CTs (Issues #1 e #2) |
+| **US07** | [PI2-73](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-73) | Avaliação de precisão de alinhamento e compilação de patches | `src/patch.c` | 5 CTs (100% OK) |
+| **US13** | [PI2-79](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-79) | Menu principal com instruções, configurações e fluxo de entrada | `src/menu.c` | 2 CTs (100% OK) |
+
+*Módulos adicionais em desenvolvimento ativo no ciclo atual (U2):*
+
+* **US14** ([PI2-80](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-80)): Persistência binária local (`src/save.c` / `save.bin` com 5.0 Story Points).
+* **US11** ([PI2-77](https://csprj-adsr-2p-e7.atlassian.net/browse/PI2-77)): Inserção de patches de alinhamento no núcleo da IA (8.0 Story Points).
+
+---
+
+#### 9.2.2. Gestão da Sprint no Board (Jira Software)
+
+* **Link Oficial do Board:** [Acessar Board do Projeto PI2 - Squad E7](https://csprj-adsr-2p-e7.atlassian.net/jira/software/c/projects/PI2/boards/2)
+* **Equivalência de Nomenclatura:** A "Sprint 01" avaliada na Entrega 03 de FDS corresponde ao ciclo de desenvolvimento da Unidade 2, ativo no Board do Jira como **Week 12 - Protótipo** (Sprint ID 82, período 19/10/2026 a 24/10/2026).
+* **Meta da Sprint (*Sprint Goal*):** *"PIF: protótipo jogável integrado C + Haskell, patches de alinhamento e playtesting + Entrega 03 FDS: testes de sistema, screencasts, rastreabilidade e pareamento."*
+* **Status das Colunas:** O Board reflete rigorosamente a realidade do repositório:
+  * **Concluído (Done):** Histórias finalizadas, casos de testes de sistema elaborados e executados, convenção de versionamento e definição de duplas.
+  * **Em andamento (In Progress):** Playtesting do protótipo e evidências finais.
+  * **Tarefas pendentes (To Do):** Histórias planejadas para os ciclos subsequentes.
+
+---
+
+#### 9.2.3. Evidência Visual do Board Atualizado
+
+Captura em alta resolução realizada diretamente do Jira Software, exibindo todas as colunas (*To Do*, *In Progress* e *Done*) e as swimlanes de PIF e FDS:
+
+![Visão Completa do Board no Jira](./docs/img/print_board_sprint2_completo.png)
 
 ### 9.3. Qualidade e testes
 
