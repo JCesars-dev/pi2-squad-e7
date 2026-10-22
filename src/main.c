@@ -5,6 +5,7 @@
 #include "typing_engine.h"
 #include "ui.h"
 #include "save.h"
+#include "patch_feedback.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -23,6 +24,11 @@ typedef enum {
     STATE_NAME_INPUT,
     STATE_RANKING
 } GameState;
+
+typedef struct {
+    char name[MAX_NAME_LEN];
+    int score;
+} RankingEntry;
 
 /* Funcoes auxiliares para carregamento do Ranking gerado em Haskell */
 static void save_ranking_entry(const char *player_name, int score) {
@@ -44,11 +50,6 @@ static int load_ranking(RankingEntry entries[], int max_entries) {
     fclose(f);
     return count;
 }
-
-typedef struct {
-    char name[MAX_NAME_LEN];
-    int score;
-} RankingEntry;
 
 /* =========================================================================
  * Processamento de Rodadas e Game Loop (PI2-89 - Julio Cesar)
@@ -75,7 +76,7 @@ static void combat_process_round(GameState *state,
 
     /* Captura de caracteres digitados */
     int char_pressed = GetCharPressed();
-    while (char_pressed > 0) {
+    while (char_pressed > 0 && *state == STATE_COMBAT) {
         int errors = 0;
         const char *res = typing_engine_handle_key(typing_engine, char_pressed, &errors);
         if (res != NULL) {
@@ -93,46 +94,49 @@ static void combat_process_round(GameState *state,
                 const char *rating_txt;
                 Color rating_c;
                 int font_sz;
+                int feedback_grade;
                 if (errors == 0) {
                     *score += SCORE_PERFECT;
                     rating_txt = "CONVERGENCIA PERFEITA! (+150)";
                     rating_c = (Color){ 255, 215, 0, 255 };
                     font_sz = 34;
+                    feedback_grade = 0;
                 } else if (errors <= 2) {
                     *score += SCORE_STABLE;
                     rating_txt = "ALINHAMENTO ESTAVEL! (+100)";
                     rating_c = (Color){ 50, 255, 120, 255 };
                     font_sz = 30;
+                    feedback_grade = 1;
                 } else {
                     *score += SCORE_PATCHED;
                     rating_txt = "PATCH APLICADO! (+50)";
                     rating_c = (Color){ 0, 220, 255, 255 };
                     font_sz = 26;
+                    feedback_grade = 2;
                 }
 
+                patch_feedback_play_grade(feedback_grade);
                 ui_spawn_floating_text(ui, rating_txt, boss->rect.x + boss->rect.width / 2.0f,
                                       boss->rect.y - 30.0f, rating_c, font_sz, 1.2f);
 
-                if (boss->hp <= 0 || typing_engine_is_finished(typing_engine)) {
+                if (boss->alignment_pct >= 100 && typing_engine_is_finished(typing_engine)) {
                     *state = STATE_VICTORY;
                     save_match_result(*score, 100, 1);
                 }
             } else if (strcmp(res, "ERROR") == 0) {
-                ui_spawn_floating_text(ui, "ERRO DE SINTAXE!", SCREEN_WIDTH / 2.0f,
+                *score = (*score >= SCORE_ERROR_PENALTY) ? *score - SCORE_ERROR_PENALTY : 0;
+                patch_feedback_play_error();
+                ui_spawn_floating_text(ui, "ERRO DE SINTAXE! (-5)", SCREEN_WIDTH / 2.0f,
                                       SCREEN_HEIGHT - 130.0f, (Color){ 255, 60, 60, 255 }, 24, 0.5f);
             }
         }
         char_pressed = GetCharPressed();
     }
 
-    /* Tratamento de barra de espaco como tecla */
-    if (IsKeyPressed(KEY_SPACE)) {
-        int errors = 0;
-        const char *res = typing_engine_handle_key(typing_engine, KEY_SPACE, &errors);
-        if (res != NULL && strcmp(res, "ERROR") == 0) {
-            ui_spawn_floating_text(ui, "ERRO DE SINTAXE!", SCREEN_WIDTH / 2.0f,
-                                  SCREEN_HEIGHT - 130.0f, (Color){ 255, 60, 60, 255 }, 24, 0.5f);
-        }
+    /* Evita que um projetil converta vitoria em derrota no mesmo frame. */
+    if (*state != STATE_COMBAT) {
+        ui_update(ui, dt);
+        return;
     }
 
     /* 4. Projeteis, Colisoes e Status */
@@ -167,7 +171,7 @@ static void combat_process_round(GameState *state,
             .boss_hp = boss->hp,
             .boss_phase = boss->difficulty,
             .boss_alignment_pct = (int)boss->alignment_pct,
-            .phrase_index = 0
+            .phrase_index = typing_engine->phrase_index
         };
         save_game(&session_data);
     }
@@ -177,6 +181,7 @@ static void combat_process_round(GameState *state,
 
 int main(void) {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "AI Safety");
+    patch_feedback_init();
     SetTargetFPS(TARGET_FPS);
 
     GameState state = STATE_MENU;
@@ -230,7 +235,12 @@ int main(void) {
                     bullet_mgr_clear(&bullet_mgr);
                     typing_engine_reset(&typing_engine);
                     ui_init(&ui);
-                    
+                    if (saved_session.phrase_index >= 0 &&
+                        saved_session.phrase_index < typing_engine.phrase_count) {
+                        typing_engine.phrase_index = saved_session.phrase_index;
+                        typing_engine.total_completed = saved_session.phrase_index;
+                    }
+
                     player.hp = saved_session.player_hp;
                     boss.hp = saved_session.boss_hp;
                     boss.alignment_pct = (float)saved_session.boss_alignment_pct;
@@ -358,6 +368,7 @@ int main(void) {
         EndDrawing();
     }
 
+    patch_feedback_shutdown();
     CloseWindow();
     return 0;
 }
