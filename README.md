@@ -341,8 +341,6 @@ A cadeia de rastreabilidade é **história de usuário → card no Jira → bran
 
 #### Atividade do repositório
 
-Levantamento feito em 22/10/2026, a partir do histórico de commits (`git log`). A semana de 19/10 a 25/10 ainda está em andamento.
-
 | Semana | Período | Commits | Autores ativos |
 | :---: | :---: | :---: | :---: |
 | 36 | 31/08 – 06/09 | 9 | 1 |
@@ -352,7 +350,7 @@ Levantamento feito em 22/10/2026, a partir do histórico de commits (`git log`).
 | 40 | 28/09 – 04/10 | 2 | 1 |
 | 41 | 05/10 – 11/10 | 2 | 1 |
 | 42 | 12/10 – 18/10 | 13 | 2 |
-| 43 | 19/10 – 25/10 | 7 | 3 |
+| 43 | 19/10 – 25/10 | 14 | 6 |
 
 Para refazer o levantamento:
 
