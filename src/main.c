@@ -4,16 +4,51 @@
 #include "bullet.h"
 #include "typing_engine.h"
 #include "ui.h"
+#include "save.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <string.h>
 #include <stddef.h>
+
+#define RANKING_FILE "bin/ranking.txt"
+#define MAX_RANKING_ENTRIES 10
+#define MAX_NAME_LEN 16
 
 typedef enum {
     STATE_MENU,
     STATE_COMBAT,
     STATE_GAME_OVER,
-    STATE_VICTORY
+    STATE_VICTORY,
+    STATE_NAME_INPUT,
+    STATE_RANKING
 } GameState;
+
+/* Funcoes auxiliares para carregamento do Ranking gerado em Haskell */
+static void save_ranking_entry(const char *player_name, int score) {
+    FILE *f = fopen(RANKING_FILE, "a");
+    if (f) {
+        fprintf(f, "%s %d\n", player_name[0] == '\0' ? "ANONIMO" : player_name, score);
+        fclose(f);
+    }
+}
+
+static int load_ranking(RankingEntry entries[], int max_entries) {
+    FILE *f = fopen(RANKING_FILE, "r");
+    if (!f) return 0;
+
+    int count = 0;
+    while (count < max_entries && fscanf(f, "%15s %d", entries[count].name, &entries[count].score) == 2) {
+        count++;
+    }
+    fclose(f);
+    return count;
+}
+
+typedef struct {
+    char name[MAX_NAME_LEN];
+    int score;
+} RankingEntry;
 
 /* =========================================================================
  * Processamento de Rodadas e Game Loop (PI2-89 - Julio Cesar)
@@ -80,6 +115,7 @@ static void combat_process_round(GameState *state,
 
                 if (boss->hp <= 0 || typing_engine_is_finished(typing_engine)) {
                     *state = STATE_VICTORY;
+                    save_match_result(*score, 100, 1);
                 }
             } else if (strcmp(res, "ERROR") == 0) {
                 ui_spawn_floating_text(ui, "ERRO DE SINTAXE!", SCREEN_WIDTH / 2.0f,
@@ -119,7 +155,21 @@ static void combat_process_round(GameState *state,
 
         if (!player->is_alive) {
             *state = STATE_GAME_OVER;
+            save_match_result(*score, 50, 0);
         }
+    }
+
+    /* Salvamento binario automatico durante o combate ativo */
+    if (*state == STATE_COMBAT) {
+        SaveData session_data = {
+            .score = *score,
+            .player_hp = player->hp,
+            .boss_hp = boss->hp,
+            .boss_phase = boss->difficulty,
+            .boss_alignment_pct = (int)boss->alignment_pct,
+            .phrase_index = 0
+        };
+        save_game(&session_data);
     }
 
     ui_update(ui, dt);
@@ -132,6 +182,9 @@ int main(void) {
     GameState state = STATE_MENU;
     int difficulty = DIFFICULTY_NORMAL;
     int score = 0;
+
+    char player_name[MAX_NAME_LEN] = "\0";
+    int letter_count = 0;
 
     Player player;
     Boss boss;
@@ -166,12 +219,33 @@ int main(void) {
                 
                 /* Transita para combate */
                 state = STATE_COMBAT;
+            } else if (save_exists() && IsKeyPressed(KEY_C)) {
+                /* Carrega a sessao salva se existir o arquivo binario valido */
+                SaveData saved_session;
+                if (load_game(&saved_session)) {
+                    difficulty = saved_session.boss_phase;
+                    score = saved_session.score;
+                    player_init(&player, SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT - 200.0f);
+                    boss_init(&boss, SCREEN_WIDTH / 2.0f, 130.0f, difficulty);
+                    bullet_mgr_clear(&bullet_mgr);
+                    typing_engine_reset(&typing_engine);
+                    ui_init(&ui);
+                    
+                    player.hp = saved_session.player_hp;
+                    boss.hp = saved_session.boss_hp;
+                    boss.alignment_pct = (float)saved_session.boss_alignment_pct;
+                    state = STATE_COMBAT;
+                }
+            } else if (IsKeyPressed(KEY_K)) {
+                state = STATE_RANKING;
             }
         } else if (state == STATE_COMBAT) {
             /* Processamento da rodada ativa (Julio Cesar - PI2-89) */
             combat_process_round(&state, &player, &boss, &bullet_mgr, &typing_engine, &ui, &score, dt);
         } else if (state == STATE_GAME_OVER || state == STATE_VICTORY) {
-            if (IsKeyPressed(KEY_R)) {
+            if (IsKeyPressed(KEY_ENTER)) {
+                state = STATE_NAME_INPUT;
+            } else if (IsKeyPressed(KEY_R)) {
                 player_init(&player, SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT - 200.0f);
                 boss_init(&boss, SCREEN_WIDTH / 2.0f, 130.0f, difficulty);
                 bullet_mgr_clear(&bullet_mgr);
@@ -180,6 +254,33 @@ int main(void) {
                 score = 0;
                 state = STATE_COMBAT;
             } else if (IsKeyPressed(KEY_M)) {
+                state = STATE_MENU;
+            }
+        } else if (state == STATE_NAME_INPUT) {
+            int key = GetCharPressed();
+            while (key > 0) {
+                if ((key >= 32) && (key <= 125) && (letter_count < MAX_NAME_LEN - 1)) {
+                    player_name[letter_count] = (char)key;
+                    player_name[letter_count + 1] = '\0';
+                    letter_count++;
+                }
+                key = GetCharPressed();
+            }
+
+            if (IsKeyPressed(KEY_BACKSPACE)) {
+                letter_count--;
+                if (letter_count < 0) letter_count = 0;
+                player_name[letter_count] = '\0';
+            }
+
+            if (IsKeyPressed(KEY_ENTER)) {
+                save_ranking_entry(player_name, score);
+                player_name[0] = '\0';
+                letter_count = 0;
+                state = STATE_RANKING;
+            }
+        } else if (state == STATE_RANKING) {
+            if (IsKeyPressed(KEY_M) || IsKeyPressed(KEY_ESCAPE)) {
                 state = STATE_MENU;
             }
         }
@@ -197,6 +298,31 @@ int main(void) {
 
         if (state == STATE_MENU) {
             ui_draw_menu(difficulty);
+            if (save_exists()) {
+                DrawText("[C] CONTINUAR JOGO SALVO", SCREEN_WIDTH / 2 - 140, SCREEN_HEIGHT - 180, 20, GREEN);
+            }
+            DrawText("[K] VER RANKING", SCREEN_WIDTH / 2 - 90, SCREEN_HEIGHT - 140, 20, LIGHTGRAY);
+        } else if (state == STATE_RANKING) {
+            DrawText("=== RANKING DE JOGADORES ===", SCREEN_WIDTH / 2 - 180, 80, 26, GOLD);
+            
+            RankingEntry entries[MAX_RANKING_ENTRIES];
+            int count = load_ranking(entries, MAX_RANKING_ENTRIES);
+
+            for (int i = 0; i < count; i++) {
+                DrawText(TextFormat("%d. %-15s - %06d PTS", i + 1, entries[i].name, entries[i].score),
+                         SCREEN_WIDTH / 2 - 160, 150 + (i * 35), 20, RAYWHITE);
+            }
+
+            if (count == 0) {
+                DrawText("NENHUMA PONTUACAO REGISTRADA", SCREEN_WIDTH / 2 - 160, 200, 20, GRAY);
+            }
+
+            DrawText("Pressione [M] para voltar ao menu", SCREEN_WIDTH / 2 - 160, SCREEN_HEIGHT - 100, 20, GRAY);
+        } else if (state == STATE_NAME_INPUT) {
+            DrawText("DIGITE SEU NOME PARA O RANKING:", SCREEN_WIDTH / 2 - 180, SCREEN_HEIGHT / 2 - 60, 20, RAYWHITE);
+            DrawRectangleLines(SCREEN_WIDTH / 2 - 150, SCREEN_HEIGHT / 2 - 20, 300, 40, RAYWHITE);
+            DrawText(player_name, SCREEN_WIDTH / 2 - 140, SCREEN_HEIGHT / 2 - 10, 20, GREEN);
+            DrawText("Pressione [ENTER] para confirmar", SCREEN_WIDTH / 2 - 150, SCREEN_HEIGHT / 2 + 40, 18, GRAY);
         } else {
             /* Aplica shake nas entidades de jogo */
             Camera2D camera = { 0 };
@@ -222,8 +348,10 @@ int main(void) {
 
             if (state == STATE_GAME_OVER) {
                 ui_draw_game_over(score);
+                DrawText("Pressione [ENTER] para registrar pontuacao", SCREEN_WIDTH / 2 - 180, SCREEN_HEIGHT - 100, 20, YELLOW);
             } else if (state == STATE_VICTORY) {
                 ui_draw_victory(score);
+                DrawText("Pressione [ENTER] para registrar pontuacao", SCREEN_WIDTH / 2 - 180, SCREEN_HEIGHT - 100, 20, GREEN);
             }
         }
 
